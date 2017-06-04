@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MyBatis 通用 Mapper</title>
+    <link>https://mapperhelper.github.io/</link>
+    <description>Recent content on MyBatis 通用 Mapper</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 04 Jun 2017 15:21:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://mapperhelper.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>1. 集成通用 Mapper</title>
+      <link>https://mapperhelper.github.io/docs/1.integration/</link>
+      <pubDate>Sun, 04 Jun 2017 15:21:18 +0800</pubDate>
+      
+      <guid>https://mapperhelper.github.io/docs/1.integration/</guid>
+      <description>添加 Maven 依赖或引入 Jar 包 如果你使用 Maven，只需要添加如下依赖：
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;tk.mybatis&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mapper&amp;lt;/artifactId&amp;gt; &amp;lt;!-- 建议使用最新版本,最新版本请从项目首页查找 --&amp;gt; &amp;lt;version&amp;gt;x.x.x&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  如果你想引入Jar包，你可以从下面的地址下载：
+https://oss.sonatype.org/content/repositories/releases/tk/mybatis/mapper
+http://repo1.maven.org/maven2/tk/mybatis/mapper
+由于通用Mapper依赖JPA，所以还需要下载persistence-api-1.0.jar：
+http://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/
+集成通用Mapper 3.2.0 版本以后配置更简单，以前的拦截器不能继续使用。
+配置方式分为 Java 编码方式和 Spring 集成方式。
+1). Java 编码方式 MapperHelper mapperHelper = new MapperHelper(); //特殊配置 Config config = new Config(); //具体支持的参数看后面的文档 config.setXXX(XXX); //设置配置 mapperHelper.setConfig(config); // 注册自己项目中使用的通用Mapper接口，这里没有默认值，必须手动注册 mapperHelper.registerMapper(Mapper.class); //配置完成后，执行下面的操作 mapperHelper.processConfiguration(session.getConfiguration());  2). 纯 Spring 配置方式 &amp;lt;bean class=&amp;quot;tk.mybatis.spring.mapper.MapperScannerConfigurer&amp;quot;&amp;gt; &amp;lt;property name=&amp;quot;basePackage&amp;quot; value=&amp;quot;com.isea533.mybatis.mapper&amp;quot;/&amp;gt; &amp;lt;property name=&amp;quot;properties&amp;quot;&amp;gt; &amp;lt;value&amp;gt; mappers=tk.mybatis.mapper.common.Mapper &amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;/bean&amp;gt;  你没看错，就是这么配置的，注意这里是 tk.</description>
+    </item>
+    
+    <item>
+      <title>2. 使用通用 Mapper</title>
+      <link>https://mapperhelper.github.io/docs/2.use/</link>
+      <pubDate>Sun, 04 Jun 2017 15:21:18 +0800</pubDate>
+      
+      <guid>https://mapperhelper.github.io/docs/2.use/</guid>
+      <description>集成方法请看前面的文档，集成后，可以继续阅读本页文档。
+1. 继承通用的Mapper&amp;lt;T&amp;gt;,必须指定泛型&amp;lt;T&amp;gt; 例如下面的例子:
+public interface UserInfoMapper extends Mapper&amp;lt;UserInfo&amp;gt; { //其他必须手写的接口... }  一旦继承了Mapper&amp;lt;T&amp;gt;,继承的Mapper就拥有了Mapper&amp;lt;T&amp;gt;所有的通用方法。
+2. 泛型(实体类)&amp;lt;T&amp;gt;的类型必须符合要求 实体类按照如下规则和数据库表进行转换,注解全部是JPA中的注解:
+ 表名默认使用类名,驼峰转下划线(只对大写字母进行处理),如UserInfo默认对应的表名为user_info。 表名可以使用@Table(name = &amp;quot;tableName&amp;quot;)进行指定,对不符合第一条默认规则的可以通过这种方式指定表名. 字段默认和@Column一样,都会作为表字段,表字段默认为Java对象的Field名字驼峰转下划线形式. 可以使用@Column(name = &amp;quot;fieldName&amp;quot;)指定不符合第3条规则的字段名 使用@Transient注解可以忽略字段,添加该注解的字段不会作为表字段使用. 建议一定是有一个@Id注解作为主键的字段,可以有多个@Id注解的字段作为联合主键. 默认情况下,实体类中如果不存在包含@Id注解的字段,所有的字段都会作为主键字段进行使用(这种效率极低). 实体类可以继承使用,可以参考测试代码中的tk.mybatis.mapper.model.UserLogin2类. 由于基本类型,如int作为实体类字段时会有默认值0,而且无法消除,所以实体类中建议不要使用基本类型. @NameStyle注解，用来配置对象名/字段和表名/字段之间的转换方式，该注解优先于全局配置style，可选值：  normal:使用实体类名/属性名作为表名/字段名 camelhump:这是默认值，驼峰转换为下划线形式 uppercase:转换为大写 lowercase:转换为小写   通过使用Mapper专用的MyBatis生成器插件可以直接生成符合要求带注解的实体类。
+重点强调 @Transient 注解 许多人由于不仔细看文档，频繁在这个问题上出错。
+如果你的实体类中包含了不是数据库表中的字段，你需要给这个字段加上@Transient注解，这样通用Mapper在处理单表操作时就不会将标注的属性当成表字段处理！ 3.主键策略(仅用于insert方法) 通用Mapper还提供了序列(支持Oracle)、UUID(任意数据库,字段长度32)、主键自增(类似Mysql,Hsqldb)三种方式，其中序列和UUID可以配置多个，主键自增只能配置一个。
+由于MySql自增主键最常用，所以这里从最简单的配置方式开始。
+1.@GeneratedValue(generator = &amp;quot;JDBC&amp;quot;) @Id @GeneratedValue(generator = &amp;quot;JDBC&amp;quot;) private Integer id;  这会令 MyBatis 使用 JDBC 的 getGeneratedKeys 方法来取出由数据库内部生成的主键（比如：像 MySQL 和 SQL Server 这样的关系数据库管理系统的自动递增字段）。 这种情况对应的xml类似下面这样:</description>
+    </item>
+    
+    <item>
+      <title>3. MyBatis Generator 插件</title>
+      <link>https://mapperhelper.github.io/docs/3.usembg/</link>
+      <pubDate>Sun, 04 Jun 2017 15:21:18 +0800</pubDate>
+      
+      <guid>https://mapperhelper.github.io/docs/3.usembg/</guid>
+      <description>通用Mapper在1.0.0版本的时候增加了MyBatis Generator(以下简称MBG)插件，使用该插件可以很方便的生成实体类、Mapper接口以及对应的XML文件。
+本篇文档就是讲述如何在MBG中使用该插件。
+首先对MBG不太了解的可以先阅读下面的文档：
+Mybatis Geneator 详解 http://git.oschina.net/free/Mybatis_Utils/tree/master/MybatisGeneator/MybatisGeneator.md
+使用通用 Mapper 插件 插件代码在tk.mybatis.mapper.generator包下面，一共有如下两个类：
+ MapperCommentGenerator：该类用于生成数据库备注字段的注释，以及实体类字段的注解。 MapperPlugin：插件的实现类，该类默认使用上面这个注释生成器，插件屏蔽了一般的CRUD方法（保留了Example），插件可以生成实体的@Table注解。
+  另外本项目为了在Maven中配置更简单，从1.0.0版本开始上传Maven中央仓库。
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;tk.mybatis&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;mapper&amp;lt;/artifactId&amp;gt; &amp;lt;!-- 建议使用最新版本 --&amp;gt; &amp;lt;version&amp;gt;x.x.x&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  为什么用maven更方便，稍后会说明。
+运行MBG有多种方法，这里只介绍两种比较常见的方法。并且有关的内容会针对这样的运行方式进行配置。
+一、使用Java编码方式运行MBG 本项目测试代码中包含这个例子。
+使用这种方式，首先下载MBG的Jar包（本项目测试代码中使用maven引入jar包，使用Java代码运行）。
+MBG下载地址:http://repo1.maven.org/maven2/org/mybatis/generator/mybatis-generator-core/
+Java代码很容易，和文档中的一样：
+List&amp;lt;String&amp;gt; warnings = new ArrayList&amp;lt;String&amp;gt;(); boolean overwrite = true; ConfigurationParser cp = new ConfigurationParser(warnings); Configuration config = cp.parseConfiguration( Generator.class.getResourceAsStream(&amp;quot;/generator/generatorConfig.xml&amp;quot;)); DefaultShellCallback callback = new DefaultShellCallback(overwrite); MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings); myBatisGenerator.generate(null);  你只需要在你当前的项目中创建一个类，添加一个main方法，在main中写上上面的代码即可。
+这段代码容易，最主要的一个内容是&amp;quot;generatorConfig.xml&amp;quot;,我们应该如何配置该类。</description>
+    </item>
+    
+    <item>
+      <title>4. UUID 简单示例</title>
+      <link>https://mapperhelper.github.io/docs/3-2.mapper-uuid/</link>
+      <pubDate>Sun, 04 Jun 2017 15:21:18 +0800</pubDate>
+      
+      <guid>https://mapperhelper.github.io/docs/3-2.mapper-uuid/</guid>
+      <description>通用 Mapper 中对 UUID 的用法主要提到了一种专有的写法，如下写法：
+@GeneratedValue(generator = &amp;quot;UUID&amp;quot;)  这种方式实现很容易理解，就是在你 insert 之前，调用 UUID 的公共方法在 &amp;lt;bind&amp;gt; 标签中生成了一个值，插入到了数据库，由于这个值是临时的，并没有 set 到对象，因此这种方式是不支持回写的。
+由于回写方式很常见，因此用这种方式很难满足要求。
+上面这些在文档中都提到了。
+而且在文档中也提到了一种可以回写的方式，由于很多人不理解或者尝试失败，因此很早就有必要写一篇如何使用可回写 UUID 的方式（我曾经远程协助一个朋友解决过这个问题，这个朋友答应我把自己的用法写下来分享给大家，可惜食言了）。
+##可回写的 UUID 最简单的可回写 UUID 方式就是像 Oracle 序列那样直接写一个返回 UUID 的 SQL 就能实现，这是第一种写法：
+@Id @GeneratedValue(strategy = GenerationType.IDENTITY,generator = &amp;quot;select uuid()&amp;quot;) private String id;  使用这种方式的时候必须注意，由于是执行 SQL，所以底层是使用 &amp;lt;selectKey&amp;gt; 实现的，并且因为需要先得到 UUID 的值才能插入数据库，因此还需要配置 ORDER 属性，使用 Java 方式配置时，用下面的方式进行配置：
+Config config = new Config(); // 其他配置 // 主键自增回写方法执行顺序,默认AFTER,可选值为(BEFORE|AFTER) config.setOrder(&amp;quot;BEFORE&amp;quot;); mapperHelper.setConfig(config);  使用 Spring 方式进行配置时如下：</description>
+    </item>
+    
+    <item>
+      <title>5. 高级用法</title>
+      <link>https://mapperhelper.github.io/docs/5.professional/</link>
+      <pubDate>Sun, 04 Jun 2017 15:21:18 +0800</pubDate>
+      
+      <guid>https://mapperhelper.github.io/docs/5.professional/</guid>
+      <description>如果你在使用通用 Mapper 过程中已经得心应手，并且几乎没有遇到过任何问题。那么，你可以看该部分内容。
+如果你对Mapper2已经很熟悉，想使用Mapper3新的方式，你也可以看该部分内容。
+但是在Mapper3相关的文档中，更多是按照Mapper2的方式来讲的。
+在Mapper3变化中提到了许多新的变化。
+如果使用这些新的特性，是这部分的主要内容。
+在看下面内容前，请先阅读Mapper3变化。
+接口可以自定义搭配继承 如果你想按需选择接口，不想使用Mapper&amp;lt;T&amp;gt;包含的那么多的方法，你可以创建自己的MyMapper&amp;lt;T&amp;gt;，自己搭配想要的方法。
+Mapper3提供的全部的方法，可以查看Mapper3通用接口大全
+如何创建自己的MyMapper&amp;lt;T&amp;gt;呢？ 这里只是简单的举例，仅供参考。
+我需要那些方法？  假设我有一类表的操作仅设计到查询操作，不需要insert,update,delete等操作。  我可能会选择SelectMapper&amp;lt;T&amp;gt;,SelectOneMapper&amp;lt;T&amp;gt;，SelectRowBoundsMapper&amp;lt;T&amp;gt;,SelectByExampleRowBoundsMapper&amp;lt;T&amp;gt;接口。
+那么我的MyMapper&amp;lt;T&amp;gt;就是下面的样子:
+public interface MyMapper&amp;lt;T&amp;gt; extends SelectMapper&amp;lt;T&amp;gt;, SelectOneMapper&amp;lt;T&amp;gt;, SelectRowBoundsMapper&amp;lt;T&amp;gt;, SelectByExampleRowBoundsMapper&amp;lt;T&amp;gt; { }   假设我项目中需要用到批量插入和基本才CRUD操作，那么MyMapper&amp;lt;T&amp;gt;就是下面的样子:  public interface MyMapper&amp;lt;T&amp;gt; extends BaseMapper&amp;lt;T&amp;gt;, InsertListMapper&amp;lt;T&amp;gt; { }   假如我想用Mapper&amp;lt;T&amp;gt;的所有方法和MySql&amp;lt;T&amp;gt;的方法，那么MyMapper&amp;lt;T&amp;gt;就是下面的样子:  public interface MyMapper&amp;lt;T&amp;gt; extends Mapper&amp;lt;T&amp;gt;, MySqlMapper&amp;lt;T&amp;gt; { }  设计好自己的MyMapper&amp;lt;T&amp;gt;后，还需要进行配置。
+配置MyMapper&amp;lt;T&amp;gt; &amp;lt;bean class=&amp;quot;tk.mybatis.spring.mapper.MapperScannerConfigurer&amp;quot;&amp;gt; &amp;lt;property name=&amp;quot;basePackage&amp;quot; value=&amp;quot;com.isea533.mybatis.mapper&amp;quot;/&amp;gt; &amp;lt;property name=&amp;quot;properties&amp;quot;&amp;gt; &amp;lt;value&amp;gt; mappers=com.xxx.xxx.MyMapper &amp;lt;/value&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;/bean&amp;gt;  只需要按照上面的方式配置即可。</description>
+    </item>
+    
+    <item>
+      <title>6. 开发自己的通用接口方法</title>
+      <link>https://mapperhelper.github.io/docs/6.mymapper/</link>
+      <pubDate>Sun, 04 Jun 2017 15:21:18 +0800</pubDate>
+      
+      <guid>https://mapperhelper.github.io/docs/6.mymapper/</guid>
+      <description>除了Mapper2中支持的两种方式外（Mapper2扩展文档]
+增加了一种简单的方式，看下面一个例子：
+public interface InsertListMapper&amp;lt;T&amp;gt; { /** * 批量插入，支持数据库自增字段，支持回写 * * @param recordList * @return */ @Options(useGeneratedKeys = true, keyProperty = &amp;quot;id&amp;quot;) @InsertProvider(type = SpecialProvider.class, method = &amp;quot;dynamicSQL&amp;quot;) int insertList(List&amp;lt;T&amp;gt; recordList); }  这是一个批量插入的接口，这里限制自增属性为id。
+我们看看实现类SpecialProvider中的insertList(方法名必须和接口方法名一致)方法：
+public String insertList(MappedStatement ms) { final Class&amp;lt;?&amp;gt; entityClass = getSelectReturnType(ms); //获取表的各项属性 EntityTable table = getEntityTable(entityClass); //开始拼sql StringBuilder sql = new StringBuilder(); sql.append(&amp;quot;insert into &amp;quot;); sql.append(table.getName()); sql.append(&amp;quot;(&amp;quot;); boolean first = true; for (EntityColumn column : table.getEntityClassColumns()) { if(!</description>
+    </item>
+    
+    <item>
+      <title>7. 3.3.0 版本新增内容使用文档</title>
+      <link>https://mapperhelper.github.io/docs/7.use330/</link>
+      <pubDate>Sun, 04 Jun 2017 15:21:18 +0800</pubDate>
+      
+      <guid>https://mapperhelper.github.io/docs/7.use330/</guid>
+      <description>增加对动态表名的支持 新增IDynamicTableName接口： /** * 实现动态表名时，实体类实现该接口 * * @author liuzh * @since 2015-10-28 22:20 */ public interface IDynamicTableName { /** * 获取动态表名 - 这个方法是关键，只要有返回值，不是null和&#39;&#39;，就会用返回值作为表名 * * @return */ String getDynamicTableName(); }  一个动态表名的例子 首先继承 IDynamicTableName 接口： public class Country implements IDynamicTableName { @Id @OrderBy(&amp;quot;desc&amp;quot;) private Integer id; @Column private String countryname; private String countrycode; @Transient//非表字段，字段名称无所谓 private String dynamicTableName123; //省略getter和setter @Override//当该方法返回值不为空时，就会使用返回值作为表名 public String getDynamicTableName() { return dynamicTableName123; } public void setDynamicTableName(String dynamicTableName) { this.</description>
+    </item>
+    
+    <item>
+      <title>8. Mapper2 升级 3 注意事项</title>
+      <link>https://mapperhelper.github.io/docs/8.updateto3/</link>
+      <pubDate>Sun, 04 Jun 2017 15:21:18 +0800</pubDate>
+      
+      <guid>https://mapperhelper.github.io/docs/8.updateto3/</guid>
+      <description>Mapper2.x 升级 Mapper 3 注意事项
+##如果你只用到了Mapper&amp;lt;T&amp;gt;`接口，那么可以直接升级到3.0.0版本
+可以下载新的Jar替换，或者直接把Maven中Mapper的版本号改为3.0.0
+##如果你用到了EntityMapper
+你还需要EntityMapper：http://git.oschina.net/free/EntityMapper
+如果是用maven，可以直接添加：
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.github.abel533&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;entitymapper&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.0.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  下载jar包：https://oss.sonatype.org/content/repositories/releases/com/github/abel533/entitymapper/
+##如果你用到了SqlMapper
+你可以加入上面的EntityMapper。
+或者因为SqlMapper本身就一个类，你可以把这个类加到自己项目中。
+SqlMapper:SqlMapper.java
+#后续更新维护
+ Mapper3以后会持续维护更新，添加一些针对性的通用方法。
+ Mapper2.x版本仍然会维护一段时间，只解决bug，不会有新内容。
+ EntityMapper项目只是为了方便Mapper2升级到Mapper3时可以使用EntityMapper和SqlMapper，以后不会维护。
+ SqlMapper因为只有一个类，所以有时间的时候还会进行完善。
+  </description>
+    </item>
+    
+  </channel>
+</rss>

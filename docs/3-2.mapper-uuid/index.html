@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.21" />
+    <meta name="description" content="">
+
+
+    
+
+    
+    <title>4. UUID 简单示例</title>
+    <link href="https://mapperhelper.github.io/css/nucleus.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/hybrid.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/featherlight.min.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/horsey.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/theme.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/hugo-theme.css" rel="stylesheet">
+    <script src="https://mapperhelper.github.io/js/jquery-2.x.min.js"></script>
+    <style type="text/css">:root #header + #content > #left > #rlblock_left
+    {display:none !important;}</style>
+    
+
+  </head>
+  <body class="" data-url="/docs/3-2.mapper-uuid/">
+    
+    <nav id="sidebar">
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="http://getgrav.org" style="font-weight:bold;">
+MyBatis 通用 Mapper
+</a>
+
+    </div>
+    
+</div>
+
+
+  <div class="highlightable">
+    <ul class="topics">
+      
+        
+        
+          
+          
+            
+          
+        
+          
+          
+            
+          
+        
+          
+          
+            
+          
+        
+          
+          
+            
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  parent" data-nav-id="/docs/">
+        <a href="/docs/">
+          <span>
+            
+              <b>1. </b>
+            
+             MyBatis 通用 Mapper
+            
+           </span>
+        </a>
+        
+        <ul>
+          
+            <li class="dd-item " data-nav-id="/docs/1.integration/">
+              <a href="/docs/1.integration/">
+                <span>1. 集成通用 Mapper     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/2.use/">
+              <a href="/docs/2.use/">
+                <span>2. 使用通用 Mapper     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/3.usembg/">
+              <a href="/docs/3.usembg/">
+                <span>3. MyBatis Generator 插件     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item active" data-nav-id="/docs/3-2.mapper-uuid/">
+              <a href="/docs/3-2.mapper-uuid/">
+                <span>4. UUID 简单示例     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/5.professional/">
+              <a href="/docs/5.professional/">
+                <span>5. 高级用法     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/6.mymapper/">
+              <a href="/docs/6.mymapper/">
+                <span>6. 开发自己的通用接口方法     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/7.use330/">
+              <a href="/docs/7.use330/">
+                <span>7. 3.3.0 版本新增内容使用文档     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/8.updateto3/">
+              <a href="/docs/8.updateto3/">
+                <span>8. Mapper2 升级 3 注意事项     </i></span>
+              </a>
+            </li>
+          
+        </ul>
+        
+      </li>
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  " data-nav-id="/all/">
+        <a href="/all/">
+          <span>
+            
+              <b>2. </b>
+            
+             Mapper 接口大全
+            
+           </span>
+        </a>
+        
+      </li>
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  " data-nav-id="/faq/">
+        <a href="/faq/">
+          <span>
+            
+              <b>2. </b>
+            
+             Mapper3常见问题和用法
+            
+           </span>
+        </a>
+        
+      </li>
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  " data-nav-id="/changelog/">
+        <a href="/changelog/">
+          <span>
+            
+              <b>3. </b>
+            
+             更新日志
+            
+           </span>
+        </a>
+        
+      </li>
+      
+      
+    </ul>
+    <hr>
+     
+    <section id="footer">
+      <p>
+  <a href="https://github.com/abel533/Mapper">view on GitHub</a>
+</p>
+<br/>
+<p>
+  <a href="http://git.oschina.net/free/Mapper">view on GitOsc</a>
+</p>
+
+    </section>
+  </div>
+</nav>
+
+        <section id="body">
+        <div id="overlay"></div>
+
+        <div class="padding highlightable sticky-parent">
+            
+            <div class="sticky-spacer">
+              <div id="top-bar">
+              
+              <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                  <span id="sidebar-toggle-span">
+                      <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                        <i class="fa fa-bars"></i>
+                      </a>
+                  </span>
+                
+                
+                  
+                  
+                  
+                    
+                    
+                <a href="/docs/" itemprop="url"><span itemprop="title">MyBatis 通用 Mapper</span></a> <i class="fa fa-angle-right"></i>
+                    
+                  
+                
+                <span itemprop="title"> 4. UUID 简单示例</span>
+              </div>
+              
+            </div>
+
+            </div>
+            
+              <div id="body-inner">
+                
+                <h1>4. UUID 简单示例</h1>
+                
+
+<p>通用 Mapper 中对 UUID 的用法主要提到了一种专有的写法，如下写法：</p>
+
+<pre><code class="language-java">@GeneratedValue(generator = &quot;UUID&quot;)
+</code></pre>
+
+<p>这种方式实现很容易理解，就是在你 insert 之前，调用 UUID 的公共方法在 <code>&lt;bind&gt;</code> 标签中生成了一个值，插入到了数据库，由于这个值是临时的，并没有 <code>set</code> 到对象，因此这种方式是不支持回写的。</p>
+
+<p>由于回写方式很常见，因此用这种方式很难满足要求。</p>
+
+<p>上面这些在文档中都提到了。</p>
+
+<p>而且在文档中也提到了一种可以回写的方式，由于很多人不理解或者尝试失败，因此很早就有必要写一篇如何使用可回写 UUID 的方式（我曾经远程协助一个朋友解决过这个问题，这个朋友答应我把自己的用法写下来分享给大家，可惜食言了）。</p>
+
+<p>##可回写的 UUID
+最简单的可回写 UUID 方式就是像 Oracle 序列那样直接写一个返回 UUID 的 SQL 就能实现，这是第一种写法：</p>
+
+<pre><code class="language-java">@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY,generator = &quot;select uuid()&quot;)
+private String id;
+</code></pre>
+
+<p>使用这种方式的时候必须注意，由于是执行 SQL，所以底层是使用 <code>&lt;selectKey&gt;</code> 实现的，并且因为需要先得到 UUID 的值才能插入数据库，因此还需要配置 <code>ORDER</code> 属性，使用 Java 方式配置时，用下面的方式进行配置：</p>
+
+<pre><code class="language-java">Config config = new Config();
+// 其他配置
+// 主键自增回写方法执行顺序,默认AFTER,可选值为(BEFORE|AFTER)
+config.setOrder(&quot;BEFORE&quot;);
+mapperHelper.setConfig(config);
+</code></pre>
+
+<p>使用 Spring 方式进行配置时如下：</p>
+
+<pre><code class="language-xml">&lt;bean class=&quot;tk.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
+    &lt;property name=&quot;basePackage&quot; value=&quot;com.isea533.mybatis.mapper&quot;/&gt;
+    &lt;property name=&quot;properties&quot;&gt;
+        &lt;value&gt;
+            mappers=tk.mybatis.mapper.common.Mapper
+            ORDER=BEFORE
+        &lt;/value&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;
+</code></pre>
+
+<p>注意是增加 <code>ORDER=BEFORE</code> 这一行，如果你还有其他配置，都可以按这种方式一行一个 <code>key=value</code>。</p>
+
+<p>这么配置以后就可以正确的获取 UUID 的值了。</p>
+
+<p>##任意类型的主键回写值
+你可能没注意到上面 UUID 类型的主键中，<code>id</code> 属性的类型是 <code>String</code>，因为<code>select uuid()</code> 返回的字符串，所以 Java 中的类型要和数据库类型匹配。</p>
+
+<p>因此，如果你使用一个 <code>select myId()</code> 函数返回一个自定义类型的主键值，你需要让 Java 中的类型和这个匹配。</p>
+
+<p>##通用主键 SQL 配置
+如果你每一个实体类中都有一个 <code>id</code> 属性，并且配置的注解都一样，都执行同样的 SQL 去返回值。如果都去配置这个注解会很麻烦。想要解决这种重复性配置，最简单的方式就是提取基类，让使用相同方式主键策略的实体类继承同一个基类就能解决。</p>
+
+<p>但是如果你需要适用不同的数据库，这种方式麻烦点的解决办法就是针对不同的数据库创建不同的基类，放在不同的项目中，但是使用相同的包名，具体应用到生产环境时使用对应数据库的基类 jar 包就可以。除此之外还有一种方式，这种方式就是使用 <code>IDENTITY</code>，这个参数用于配置取回主键的方式。</p>
+
+<p>默认提供的 <code>IDENTITY</code> 可选值参考文档 <a href="http://git.oschina.net/free/Mapper/blob/master/wiki/mapper3/3.Use.md#2-generatedvalue-strategy-=-generationtype-identity-_7">GenerationType.IDENTITY</a> 。</p>
+
+<p>这个参数除了这些可选值外，还可以是可以执行的 SQL，也就是说最前面的配置方式可以改为：</p>
+
+<pre><code class="language-java">@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private String id;
+</code></pre>
+
+<p>在 Java 方式中用下面的方式进行配置：</p>
+
+<pre><code class="language-java">Config config = new Config();
+// 其他配置
+config.setIDENTITY(&quot;select uuid()&quot;);
+// 主键自增回写方法执行顺序,默认AFTER,可选值为(BEFORE|AFTER)
+config.setOrder(&quot;BEFORE&quot;);
+mapperHelper.setConfig(config);
+</code></pre>
+
+<p>使用 Spring 方式进行配置时如下：</p>
+
+<pre><code class="language-xml">&lt;bean class=&quot;tk.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
+    &lt;property name=&quot;basePackage&quot; value=&quot;com.isea533.mybatis.mapper&quot;/&gt;
+    &lt;property name=&quot;properties&quot;&gt;
+        &lt;value&gt;
+            mappers=tk.mybatis.mapper.common.Mapper
+            IDENTITY=select uuid()
+            ORDER=BEFORE
+        &lt;/value&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;
+</code></pre>
+
+<p>这里仍然要注意设置 <code>ORDER=BEFORE</code>，如果你用 <code>IDENTITY</code> 提供的那些可选参数，就不要设置（默认为<code>AFTER</code>），可选参数中仍然是针对的数据库支持自增的情况，那些情况仍然是插入数据库后才会有主键值，这点一定要明白！</p>
+
+<p>在这种情况下，如果换了数据库，只需要修改一下配置就能解决，例如 SQL SERVER 的：</p>
+
+<pre><code class="language-sql">IDENTITY=select replace(newid(), '-', '')
+</code></pre>
+
+<p>##总结
+关于 UUID 的内容就上面这些，还需要提醒一点的就是由于 <code>ORDER</code> 是一个全局的配置，所以使用时要注意保证所有主键方式都是一致的 <code>ORDER</code> 方式，主键自增的时候使用 <code>@GeneratedValue(generator = &quot;JDBC&quot;)</code> 这种方式通过 JDBC 接口去获取返回值更好。当然使用批量插入时，MySql 支持多主键回写，但是 SqlServer 仅能返回最后一个插入的主键，所以选择使用某种方式时，一定要有所了解，做好测试，避免数据库差异带来的问题。</p>
+
+
+      
+      
+      </div>
+    </div>
+
+    
+
+    <div id="navigation">
+        
+        
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="https://mapperhelper.github.io/js/clipboard.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/perfect-scrollbar.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/jquery.sticky-kit.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/featherlight.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/html5shiv-printshiv.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://mapperhelper.github.io/js/modernizr.custom.71422.js"></script>
+    <script src="https://mapperhelper.github.io/js/learn.js"></script>
+    <script src="https://mapperhelper.github.io/js/hugo-learn.js"></script>
+    
+
+  </body>
+</html>
+

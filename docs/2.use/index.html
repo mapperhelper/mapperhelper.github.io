@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.21" />
+    <meta name="description" content="">
+
+
+    
+
+    
+    <title>2. 使用通用 Mapper</title>
+    <link href="https://mapperhelper.github.io/css/nucleus.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/hybrid.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/featherlight.min.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/horsey.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/theme.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/hugo-theme.css" rel="stylesheet">
+    <script src="https://mapperhelper.github.io/js/jquery-2.x.min.js"></script>
+    <style type="text/css">:root #header + #content > #left > #rlblock_left
+    {display:none !important;}</style>
+    
+
+  </head>
+  <body class="" data-url="/docs/2.use/">
+    
+    <nav id="sidebar">
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="http://getgrav.org" style="font-weight:bold;">
+MyBatis 通用 Mapper
+</a>
+
+    </div>
+    
+</div>
+
+
+  <div class="highlightable">
+    <ul class="topics">
+      
+        
+        
+          
+          
+            
+          
+        
+          
+          
+            
+          
+        
+          
+          
+            
+          
+        
+          
+          
+            
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  parent" data-nav-id="/docs/">
+        <a href="/docs/">
+          <span>
+            
+              <b>1. </b>
+            
+             MyBatis 通用 Mapper
+            
+           </span>
+        </a>
+        
+        <ul>
+          
+            <li class="dd-item " data-nav-id="/docs/1.integration/">
+              <a href="/docs/1.integration/">
+                <span>1. 集成通用 Mapper     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item active" data-nav-id="/docs/2.use/">
+              <a href="/docs/2.use/">
+                <span>2. 使用通用 Mapper     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/3.usembg/">
+              <a href="/docs/3.usembg/">
+                <span>3. MyBatis Generator 插件     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/3-2.mapper-uuid/">
+              <a href="/docs/3-2.mapper-uuid/">
+                <span>4. UUID 简单示例     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/5.professional/">
+              <a href="/docs/5.professional/">
+                <span>5. 高级用法     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/6.mymapper/">
+              <a href="/docs/6.mymapper/">
+                <span>6. 开发自己的通用接口方法     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/7.use330/">
+              <a href="/docs/7.use330/">
+                <span>7. 3.3.0 版本新增内容使用文档     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/8.updateto3/">
+              <a href="/docs/8.updateto3/">
+                <span>8. Mapper2 升级 3 注意事项     </i></span>
+              </a>
+            </li>
+          
+        </ul>
+        
+      </li>
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  " data-nav-id="/all/">
+        <a href="/all/">
+          <span>
+            
+              <b>2. </b>
+            
+             Mapper 接口大全
+            
+           </span>
+        </a>
+        
+      </li>
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  " data-nav-id="/faq/">
+        <a href="/faq/">
+          <span>
+            
+              <b>2. </b>
+            
+             Mapper3常见问题和用法
+            
+           </span>
+        </a>
+        
+      </li>
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  " data-nav-id="/changelog/">
+        <a href="/changelog/">
+          <span>
+            
+              <b>3. </b>
+            
+             更新日志
+            
+           </span>
+        </a>
+        
+      </li>
+      
+      
+    </ul>
+    <hr>
+     
+    <section id="footer">
+      <p>
+  <a href="https://github.com/abel533/Mapper">view on GitHub</a>
+</p>
+<br/>
+<p>
+  <a href="http://git.oschina.net/free/Mapper">view on GitOsc</a>
+</p>
+
+    </section>
+  </div>
+</nav>
+
+        <section id="body">
+        <div id="overlay"></div>
+
+        <div class="padding highlightable sticky-parent">
+            
+            <div class="sticky-spacer">
+              <div id="top-bar">
+              
+              <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                  <span id="sidebar-toggle-span">
+                      <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                        <i class="fa fa-bars"></i>
+                      </a>
+                  </span>
+                
+                
+                  
+                  
+                  
+                    
+                    
+                <a href="/docs/" itemprop="url"><span itemprop="title">MyBatis 通用 Mapper</span></a> <i class="fa fa-angle-right"></i>
+                    
+                  
+                
+                <span itemprop="title"> 2. 使用通用 Mapper</span>
+              </div>
+              
+            </div>
+
+            </div>
+            
+              <div id="body-inner">
+                
+                <h1>2. 使用通用 Mapper</h1>
+                
+
+
+
+<p>集成方法请看前面的文档，集成后，可以继续阅读本页文档。</p>
+
+<h3 id="1-继承通用的-mapper-t-必须指定泛型-t">1. 继承通用的<code>Mapper&lt;T&gt;</code>,必须指定泛型<code>&lt;T&gt;</code></h3>
+
+<p>例如下面的例子:</p>
+
+<pre><code class="language-java">public interface UserInfoMapper extends Mapper&lt;UserInfo&gt; {
+  //其他必须手写的接口...
+
+}
+</code></pre>
+
+<p>一旦继承了<code>Mapper&lt;T&gt;</code>,继承的<code>Mapper</code>就拥有了<code>Mapper&lt;T&gt;</code>所有的通用方法。</p>
+
+<h3 id="2-泛型-实体类-t-的类型必须符合要求">2. 泛型(实体类)<code>&lt;T&gt;</code>的类型必须符合要求</h3>
+
+<p>实体类按照如下规则和数据库表进行转换,注解全部是JPA中的注解:</p>
+
+<ol>
+<li>表名默认使用类名,驼峰转下划线(只对大写字母进行处理),如<code>UserInfo</code>默认对应的表名为<code>user_info</code>。</li>
+<li>表名可以使用<code>@Table(name = &quot;tableName&quot;)</code>进行指定,对不符合第一条默认规则的可以通过这种方式指定表名.</li>
+<li>字段默认和<code>@Column</code>一样,都会作为表字段,表字段默认为Java对象的<code>Field</code>名字驼峰转下划线形式.</li>
+<li>可以使用<code>@Column(name = &quot;fieldName&quot;)</code>指定不符合第3条规则的字段名</li>
+<li>使用<code>@Transient</code>注解可以忽略字段,添加该注解的字段不会作为表字段使用.</li>
+<li><b>建议一定是有一个<code>@Id</code>注解作为主键的字段,可以有多个<code>@Id</code>注解的字段作为联合主键.</b></li>
+<li><b>默认情况下,实体类中如果不存在包含<code>@Id</code>注解的字段,所有的字段都会作为主键字段进行使用(这种效率极低).</b></li>
+<li>实体类可以继承使用,可以参考测试代码中的<code>tk.mybatis.mapper.model.UserLogin2</code>类.</li>
+<li>由于基本类型,如int作为实体类字段时会有默认值0,而且无法消除,所以实体类中建议不要使用基本类型.</li>
+<li><code>@NameStyle</code>注解，用来配置对象名/字段和表名/字段之间的转换方式，该注解优先于全局配置<code>style</code>，可选值：
+
+<ul>
+<li><code>normal</code>:使用实体类名/属性名作为表名/字段名</li>
+<li><code>camelhump</code>:<b>这是默认值</b>，驼峰转换为下划线形式</li>
+<li><code>uppercase</code>:转换为大写</li>
+<li><code>lowercase</code>:转换为小写</li>
+</ul></li>
+</ol>
+
+<p>通过<a href="http://git.oschina.net/free/Mapper/blob/master/wiki/mapper3/7.UseMBG.md">使用Mapper专用的MyBatis生成器插件</a>可以直接生成符合要求带注解的实体类。</p>
+
+<h4 id="重点强调-transient-注解">重点强调 <code>@Transient</code> 注解</h4>
+
+<p>许多人由于不仔细看文档，频繁在这个问题上出错。</p>
+
+<p>如果你的实体类中包含了不是数据库表中的字段，你需要给这个字段加上<code>@Transient</code>注解，这样通用Mapper在处理单表操作时就不会将标注的属性当成表字段处理！
+<br><br></p>
+
+<h3 id="3-主键策略-仅用于insert方法">3.主键策略(仅用于insert方法)</h3>
+
+<p>通用Mapper还提供了序列(支持Oracle)、UUID(任意数据库,字段长度32)、主键自增(类似Mysql,Hsqldb)三种方式，其中序列和UUID可以配置多个，主键自增只能配置一个。</p>
+
+<p>由于MySql自增主键最常用，所以这里从最简单的配置方式开始。</p>
+
+<h4 id="1-generatedvalue-generator-jdbc">1.<code>@GeneratedValue(generator = &quot;JDBC&quot;)</code></h4>
+
+<pre><code class="language-java">@Id
+@GeneratedValue(generator = &quot;JDBC&quot;)
+private Integer id;
+</code></pre>
+
+<p>这会令 MyBatis 使用 JDBC 的 getGeneratedKeys 方法来取出由数据库内部生成的主键（比如：像 MySQL 和 SQL Server 这样的关系数据库管理系统的自动递增字段）。
+这种情况对应的xml类似下面这样:</p>
+
+<pre><code class="language-xml">&lt;insert id=&quot;insertAuthor&quot; useGeneratedKeys=&quot;true&quot; keyProperty=&quot;id&quot;&gt;
+    insert into Author (username,password,email,bio)
+    values (#{username},#{password},#{email},#{bio})
+&lt;/insert&gt;
+</code></pre>
+
+<h4 id="2-generatedvalue-strategy-generationtype-identity">2.<code>@GeneratedValue(strategy = GenerationType.IDENTITY)</code></h4>
+
+<p>这个注解适用于主键自增的情况，支持下面这些数据库：</p>
+
+<ul>
+<li><b>DB2</b>: <code>VALUES IDENTITY_VAL_LOCAL()</code></li>
+<li><b>MYSQL</b>: <code>SELECT LAST_INSERT_ID()</code></li>
+<li><b>SQLSERVER</b>: <code>SELECT SCOPE_IDENTITY()</code></li>
+<li><b>CLOUDSCAPE</b>: <code>VALUES IDENTITY_VAL_LOCAL()</code></li>
+<li><b>DERBY</b>: <code>VALUES IDENTITY_VAL_LOCAL()</code></li>
+<li><b>HSQLDB</b>: <code>CALL IDENTITY()</code></li>
+<li><b>SYBASE</b>: <code>SELECT @@IDENTITY</code></li>
+<li><b>DB2_MF</b>: <code>SELECT IDENTITY_VAL_LOCAL() FROM SYSIBM.SYSDUMMY1</code></li>
+<li><b>INFORMIX</b>: <code>select dbinfo('sqlca.sqlerrd1') from systables where tabid=1</code></li>
+<li><b>JDBC</b>:这会令 MyBatis 使用 JDBC 的 getGeneratedKeys 方法来取出由数据库内部生成的主键（比如：像 MySQL 和 SQL Server 这样的关系数据库管理系统的自动递增字段）。</li>
+</ul>
+
+<p>使用<code>GenerationType.IDENTITY</code>需要在全局配置中配置<code>IDENTITY</code>的参数值，并且需要根据数库配置<code>ORDER</code>属性。</p>
+
+<p>举例如下：</p>
+
+<pre><code class="language-java">//不限于@Id注解的字段,但是一个实体类中只能存在一个(继承关系中也只能存在一个)
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+private Integer id;
+</code></pre>
+
+<p>对应的XML形式为：</p>
+
+<pre><code class="language-xml">&lt;insert id=&quot;insertAuthor&quot;&gt;
+    &lt;selectKey keyProperty=&quot;id&quot; resultType=&quot;int&quot; order=&quot;AFTER&quot;&gt;
+      SELECT LAST_INSERT_ID()
+    &lt;/selectKey&gt;
+    insert into Author
+      (id, username, password, email,bio, favourite_section)
+    values
+      (#{id}, #{username}, #{password}, #{email}, #{bio}, #{favouriteSection,jdbcType=VARCHAR})
+&lt;/insert&gt;
+</code></pre>
+
+<p>注意<code>&lt;selectKey&gt;</code>中的内容就是<code>IDENTITY</code>参数值对应数据库的SQL</p>
+
+<h4 id="3-generatedvalue-generator-uuid">3.<code>@GeneratedValue(generator = &quot;UUID&quot;)</code></h4>
+
+<pre><code class="language-java">//可以用于任意字符串类型长度超过32位的字段
+@GeneratedValue(generator = &quot;UUID&quot;)
+private String username;
+</code></pre>
+
+<p>该字段不会回写。这种情况对应类似如下的XML：</p>
+
+<pre><code class="language-xml">&lt;insert id=&quot;insertAuthor&quot;&gt;
+  &lt;bind name=&quot;username_bind&quot; value='@java.util.UUID@randomUUID().toString().replace(&quot;-&quot;, &quot;&quot;)' /&gt;
+  insert into Author
+    (id, username, password, email,bio, favourite_section)
+  values
+    (#{id}, #{username_bind}, #{password}, #{email}, #{bio}, #{favouriteSection,jdbcType=VARCHAR})
+&lt;/insert&gt;
+</code></pre>
+
+<p><strong>注意：这种方式不能回写，如果想要回写，请看 <a href="http://git.oschina.net/free/Mapper/blob/master/wiki/mapper3/10.Mapper-UUID.md">通用 Mapper UUID 简单示例</a></strong></p>
+
+<h4 id="4-oracle使用序列">4.Oracle使用序列</h4>
+
+<pre><code class="language-java">@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY,generator = &quot;select SEQ_ID.nextval from dual&quot;)
+private Integer id;
+</code></pre>
+
+<p>使用Oracle序列的时候，还需要配置:</p>
+
+<pre><code class="language-xml">&lt;property name=&quot;ORDER&quot; value=&quot;BEFORE&quot;/&gt;
+</code></pre>
+
+<p>因为在插入数据库前，需要先获取到序列值，否则会报错。
+这种情况对于的xml类似下面这样：</p>
+
+<pre><code class="language-xml">&lt;insert id=&quot;insertAuthor&quot;&gt;
+&lt;selectKey keyProperty=&quot;id&quot; resultType=&quot;int&quot; order=&quot;BEFORE&quot;&gt;
+  select SEQ_ID.nextval from dual
+&lt;/selectKey&gt;
+insert into Author
+  (id, username, password, email,bio, favourite_section)
+values
+  (#{id}, #{username}, #{password}, #{email}, #{bio}, #{favouriteSection,jdbcType=VARCHAR})
+&lt;/insert&gt;
+</code></pre>
+
+<h3 id="4-将继承的mapper接口添加到mybatis配置中">4. 将继承的Mapper接口添加到Mybatis配置中</h3>
+
+<h4 id="非spring项目中在mybatis配置文件中配置-如">非Spring项目中在mybatis配置文件中配置，如:</h4>
+
+<pre><code class="language-xml">&lt;mappers&gt;
+  &lt;mapper class=&quot;tk.mybatis.mapper.mapper.CountryMapper&quot; /&gt;
+  &lt;mapper class=&quot;tk.mybatis.mapper.mapper.UserInfoMapper&quot; /&gt;
+  &lt;mapper class=&quot;tk.mybatis.mapper.mapper.UserLoginMapper&quot; /&gt;
+&lt;/mappers&gt;
+</code></pre>
+
+<h4 id="spring配置方式">Spring配置方式</h4>
+
+<p>如果你在Spring中配置Mapper接口,不需要像上面这样一个个配置,只需要有下面的这个扫描Mapper接口的这个配置即可:</p>
+
+<pre><code class="language-xml">&lt;bean class=&quot;tk.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
+  &lt;property name=&quot;basePackage&quot; value=&quot;com.isea533.mybatis.mapper&quot;/&gt;
+&lt;/bean&gt;
+</code></pre>
+
+<p>另外因为通用接口都有顶层的接口，所以你还可以用下面的方式进行配置：</p>
+
+<pre><code class="language-xml">&lt;bean class=&quot;tk.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
+  &lt;property name=&quot;basePackage&quot; value=&quot;com.**.mapper&quot;/&gt;
+  &lt;property name=&quot;markerInterface&quot; value=&quot;tk.mybatis.mapper.common.Mapper&quot;/&gt;
+&lt;/bean&gt;
+</code></pre>
+
+<p>这样配置后，直接继承了<code>Mapper</code>接口的才会被扫描，<code>basePackage</code>可以配置的范围更大。</p>
+
+<p>如果想在Spring4中使用泛型注入，还需要包含<code>Mapper&lt;T&gt;</code>所在的包，具体请看 <a href="http://git.oschina.net/free/Mapper2/blob/master/wiki/mapper/4.Spring4.md">在Spring4中使用通用Mapper</a>。</p>
+
+<h3 id="5-代码中使用">5. 代码中使用</h3>
+
+<p>例如下面这个简单的例子:</p>
+
+<pre><code class="language-java">SqlSession sqlSession = MybatisHelper.getSqlSession();
+try {
+    //获取Mapper
+    UserInfoMapper mapper = sqlSession.getMapper(UserInfoMapper.class);
+    UserInfo userInfo = new UserInfo();
+    userInfo.setUsername(&quot;abel533&quot;);
+    userInfo.setPassword(&quot;123456&quot;);
+    userInfo.setUsertype(&quot;2&quot;);
+    userInfo.setEmail(&quot;abel533@gmail.com&quot;);
+    //新增一条数据
+    Assert.assertEquals(1, mapper.insert(userInfo));
+    //ID回写,不为空
+    Assert.assertNotNull(userInfo.getId());
+    //6是当前的ID
+    Assert.assertEquals(6, (int)userInfo.getId());
+    //通过主键删除新增的数据
+    Assert.assertEquals(1,mapper.deleteByPrimaryKey(userInfo));
+} finally {
+    sqlSession.close();
+}
+</code></pre>
+
+<p>另一个例子:</p>
+
+<pre><code class="language-java">SqlSession sqlSession = MybatisHelper.getSqlSession();
+try {
+    //获取Mapper
+    CountryMapper mapper = sqlSession.getMapper(CountryMapper.class);
+    //查询总数
+    Assert.assertEquals(183, mapper.selectCount(new Country()));
+    //查询100
+    Country country = mapper.selectByPrimaryKey(100);
+    //根据主键删除
+    Assert.assertEquals(1, mapper.deleteByPrimaryKey(100));
+    //查询总数
+    Assert.assertEquals(182, mapper.selectCount(new Country()));
+    //插入
+    Assert.assertEquals(1, mapper.insert(country));
+} finally {
+    sqlSession.close();
+}
+</code></pre>
+
+<p><b>附:Spring使用相关</b></p>
+
+<p>直接在需要的地方注入Mapper继承的接口即可,和一般情况下的使用没有区别.</p>
+
+<h3 id="6-其他">6.其他</h3>
+
+<p>如果你的实体是继承Map的，你可能需要将数据库查询的结果从大写下划线形式转换为驼峰形式，你可以搭配下面的拦截器使用：</p>
+
+<p><strong>CameHumpInterceptor - Map结果的Key转为驼峰式</strong></p>
+
+<p><a href="http://git.oschina.net/free/Mybatis_Utils/tree/master/CameHumpMap">http://git.oschina.net/free/Mybatis_Utils/tree/master/CameHumpMap</a></p>
+
+
+      
+      
+      </div>
+    </div>
+
+    
+
+    <div id="navigation">
+        
+        
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="https://mapperhelper.github.io/js/clipboard.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/perfect-scrollbar.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/jquery.sticky-kit.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/featherlight.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/html5shiv-printshiv.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://mapperhelper.github.io/js/modernizr.custom.71422.js"></script>
+    <script src="https://mapperhelper.github.io/js/learn.js"></script>
+    <script src="https://mapperhelper.github.io/js/hugo-learn.js"></script>
+    
+
+  </body>
+</html>
+

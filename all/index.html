@@ -1,0 +1,549 @@
+
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.21" />
+    <meta name="description" content="">
+
+
+    
+
+    
+    <title>Mapper 接口大全</title>
+    <link href="https://mapperhelper.github.io/css/nucleus.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/hybrid.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/featherlight.min.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/horsey.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/theme.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/hugo-theme.css" rel="stylesheet">
+    <script src="https://mapperhelper.github.io/js/jquery-2.x.min.js"></script>
+    <style type="text/css">:root #header + #content > #left > #rlblock_left
+    {display:none !important;}</style>
+    
+
+  </head>
+  <body class="" data-url="/all/">
+    
+    <nav id="sidebar">
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="http://getgrav.org" style="font-weight:bold;">
+MyBatis 通用 Mapper
+</a>
+
+    </div>
+    
+</div>
+
+
+  <div class="highlightable">
+    <ul class="topics">
+      
+        
+        
+          
+          
+            
+          
+        
+          
+          
+            
+          
+        
+          
+          
+            
+          
+        
+          
+          
+            
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  " data-nav-id="/docs/">
+        <a href="/docs/">
+          <span>
+            
+              <b>1. </b>
+            
+             MyBatis 通用 Mapper
+            
+           </span>
+        </a>
+        
+        <ul>
+          
+            <li class="dd-item " data-nav-id="/docs/1.integration/">
+              <a href="/docs/1.integration/">
+                <span>1. 集成通用 Mapper     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/2.use/">
+              <a href="/docs/2.use/">
+                <span>2. 使用通用 Mapper     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/3.usembg/">
+              <a href="/docs/3.usembg/">
+                <span>3. MyBatis Generator 插件     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/3-2.mapper-uuid/">
+              <a href="/docs/3-2.mapper-uuid/">
+                <span>4. UUID 简单示例     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/5.professional/">
+              <a href="/docs/5.professional/">
+                <span>5. 高级用法     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/6.mymapper/">
+              <a href="/docs/6.mymapper/">
+                <span>6. 开发自己的通用接口方法     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/7.use330/">
+              <a href="/docs/7.use330/">
+                <span>7. 3.3.0 版本新增内容使用文档     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/8.updateto3/">
+              <a href="/docs/8.updateto3/">
+                <span>8. Mapper2 升级 3 注意事项     </i></span>
+              </a>
+            </li>
+          
+        </ul>
+        
+      </li>
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item active parent" data-nav-id="/all/">
+        <a href="/all/">
+          <span>
+            
+              <b>2. </b>
+            
+             Mapper 接口大全
+            
+           </span>
+        </a>
+        
+      </li>
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  " data-nav-id="/faq/">
+        <a href="/faq/">
+          <span>
+            
+              <b>2. </b>
+            
+             Mapper3常见问题和用法
+            
+           </span>
+        </a>
+        
+      </li>
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  " data-nav-id="/changelog/">
+        <a href="/changelog/">
+          <span>
+            
+              <b>3. </b>
+            
+             更新日志
+            
+           </span>
+        </a>
+        
+      </li>
+      
+      
+    </ul>
+    <hr>
+     
+    <section id="footer">
+      <p>
+  <a href="https://github.com/abel533/Mapper">view on GitHub</a>
+</p>
+<br/>
+<p>
+  <a href="http://git.oschina.net/free/Mapper">view on GitOsc</a>
+</p>
+
+    </section>
+  </div>
+</nav>
+
+        <section id="body">
+        <div id="overlay"></div>
+
+        <div class="padding highlightable sticky-parent">
+            
+            <div class="sticky-spacer">
+              <div id="top-bar">
+              
+              <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                  <span id="sidebar-toggle-span">
+                      <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                        <i class="fa fa-bars"></i>
+                      </a>
+                  </span>
+                
+                
+                  
+                  
+                  
+                    
+                    
+                  
+                
+                <span itemprop="title"> Mapper 接口大全</span>
+              </div>
+              
+            </div>
+
+            </div>
+            
+              <div id="chapter">
+            
+              <div id="body-inner">
+                
+
+
+
+<p>Mapper3接口有两种形式，一种是提供了一个方法的接口。还有一种是不提供方法，但是继承了多个单方法的接口，一般是某类方法的集合。</p>
+
+<p>例如<code>SelectMapper&lt;T&gt;</code>是一个单方法的接口，<code>BaseSelectMapper&lt;T&gt;</code>是一个继承了4个基础查询方法的接口。</p>
+
+<h4 id="基础接口">基础接口</h4>
+
+<h5 id="select">Select</h5>
+
+<p>接口：<code>SelectMapper&lt;T&gt;</code><br>
+方法：<code>List&lt;T&gt; select(T record);</code><br>
+说明：根据实体中的属性值进行查询，查询条件使用等号<br><br></p>
+
+<p>接口：<code>SelectByPrimaryKeyMapper&lt;T&gt;</code><br>
+方法：<code>T selectByPrimaryKey(Object key);</code><br>
+说明：根据主键字段进行查询，方法参数必须包含完整的主键属性，查询条件使用等号<br>
+<br></p>
+
+<p>接口：<code>SelectAllMapper&lt;T&gt;</code><br>
+方法：<code>List&lt;T&gt; selectAll();</code><br>
+说明：查询全部结果，select(null)方法能达到同样的效果<br>
+<br></p>
+
+<p>接口：<code>SelectOneMapper&lt;T&gt;</code><br>
+方法：<code>T selectOne(T record);</code><br>
+说明：根据实体中的属性进行查询，只能有一个返回值，有多个结果是抛出异常，查询条件使用等号<br><br></p>
+
+<p>接口：<code>SelectCountMapper&lt;T&gt;</code><br>
+方法：<code>int selectCount(T record);</code><br>
+说明：根据实体中的属性查询总数，查询条件使用等号<br><br></p>
+
+<h5 id="insert">Insert</h5>
+
+<p>接口：<code>InsertMapper&lt;T&gt;</code><br>
+方法：<code>int insert(T record);</code><br>
+说明：保存一个实体，null的属性也会保存，不会使用数据库默认值<br><br></p>
+
+<p>接口：<code>InsertSelectiveMapper&lt;T&gt;</code><br>
+方法：<code>int insertSelective(T record);</code><br>
+说明：保存一个实体，null的属性不会保存，会使用数据库默认值<br><br></p>
+
+<h5 id="update">Update</h5>
+
+<p>接口：<code>UpdateByPrimaryKeyMapper&lt;T&gt;</code><br>
+方法：<code>int updateByPrimaryKey(T record);</code><br>
+说明：根据主键更新实体全部字段，null值会被更新<br><br></p>
+
+<p>接口：<code>UpdateByPrimaryKeySelectiveMapper&lt;T&gt;</code><br>
+方法：<code>int updateByPrimaryKeySelective(T record);</code><br>
+说明：根据主键更新属性不为null的值<br><br></p>
+
+<h5 id="delete">Delete</h5>
+
+<p>接口：<code>DeleteMapper&lt;T&gt;</code><br>
+方法：<code>int delete(T record);</code><br>
+说明：根据实体属性作为条件进行删除，查询条件使用等号<br><br></p>
+
+<p>接口：<code>DeleteByPrimaryKeyMapper&lt;T&gt;</code><br>
+方法：<code>int deleteByPrimaryKey(Object key);</code><br>
+说明：根据主键字段进行删除，方法参数必须包含完整的主键属性<br><br></p>
+
+<h5 id="base-组合接口">base 组合接口</h5>
+
+<p>接口：<code>BaseSelectMapper&lt;T&gt;</code><br>
+方法：包含上面Select的4个方法<br><br></p>
+
+<p>接口：<code>BaseInsertMapper&lt;T&gt;</code><br>
+方法：包含上面Insert的2个方法<br><br></p>
+
+<p>接口：<code>BaseUpdateMapper&lt;T&gt;</code><br>
+方法：包含上面Update的2个方法<br><br></p>
+
+<p>接口：<code>BaseDeleteMapper&lt;T&gt;</code><br>
+方法：包含上面Delete的2个方法<br><br></p>
+
+<h5 id="crud-组合接口">CRUD 组合接口</h5>
+
+<p>接口：<code>BaseMapper&lt;T&gt;</code><br>
+方法：继承了base组合接口中的4个组合接口，包含完整的CRUD方法<br><br></p>
+
+<h4 id="example-方法">Example 方法</h4>
+
+<p>接口：<code>SelectByExampleMapper&lt;T&gt;</code><br>
+方法：<code>List&lt;T&gt; selectByExample(Object example);</code><br>
+说明：根据Example条件进行查询<br>
+<b>重点：</b>这个查询支持通过<code>Example</code>类指定查询列，通过<code>selectProperties</code>方法指定查询列<br><br></p>
+
+<p>接口：<code>SelectCountByExampleMapper&lt;T&gt;</code><br>
+方法：<code>int selectCountByExample(Object example);</code><br>
+说明：根据Example条件进行查询总数<br><br></p>
+
+<p>接口：<code>UpdateByExampleMapper&lt;T&gt;</code><br>
+方法：<code>int updateByExample(@Param(&quot;record&quot;) T record, @Param(&quot;example&quot;) Object example);</code><br>
+说明：根据Example条件更新实体<code>record</code>包含的全部属性，null值会被更新<br><br></p>
+
+<p>接口：<code>UpdateByExampleSelectiveMapper&lt;T&gt;</code><br>
+方法：<code>int updateByExampleSelective(@Param(&quot;record&quot;) T record, @Param(&quot;example&quot;) Object example);</code><br>
+说明：根据Example条件更新实体<code>record</code>包含的不是null的属性值<br><br></p>
+
+<p>接口：<code>DeleteByExampleMapper&lt;T&gt;</code><br>
+方法：<code>int deleteByExample(Object example);</code><br>
+说明：根据Example条件删除数据<br><br></p>
+
+<h5 id="example-组合接口">Example 组合接口</h5>
+
+<p>接口：<code>ExampleMapper&lt;T&gt;</code><br>
+方法：包含上面Example中的5个方法<br><br></p>
+
+<h4 id="condition-方法">Condition 方法</h4>
+
+<p>Condition方法和Example方法作用完全一样，只是为了避免Example带来的歧义，提供的的Condition方法</p>
+
+<p>接口：<code>SelectByConditionMapper&lt;T&gt;</code><br>
+方法：<code>List&lt;T&gt; selectByCondition(Object condition);</code><br>
+说明：根据Condition条件进行查询<br><br></p>
+
+<p>接口：<code>SelectCountByConditionMapper&lt;T&gt;</code><br>
+方法：<code>int selectCountByCondition(Object condition);</code><br>
+说明：根据Condition条件进行查询总数<br><br></p>
+
+<p>接口：<code>UpdateByConditionMapper&lt;T&gt;</code><br>
+方法：<code>int updateByCondition(@Param(&quot;record&quot;) T record, @Param(&quot;example&quot;) Object condition);</code><br>
+说明：根据Condition条件更新实体<code>record</code>包含的全部属性，null值会被更新<br><br></p>
+
+<p>接口：<code>UpdateByConditionSelectiveMapper&lt;T&gt;</code><br>
+方法：<code>int updateByConditionSelective(@Param(&quot;record&quot;) T record, @Param(&quot;example&quot;) Object condition);</code><br>
+说明：根据Condition条件更新实体<code>record</code>包含的不是null的属性值<br><br></p>
+
+<p>接口：<code>DeleteByConditionMapper&lt;T&gt;</code><br>
+方法：<code>int deleteByCondition(Object condition);</code><br>
+说明：根据Condition条件删除数据<br><br></p>
+
+<h5 id="condition-组合接口">Condition 组合接口</h5>
+
+<p>接口：<code>ConditionMapper&lt;T&gt;</code><br>
+方法：包含上面Condition中的5个方法<br><br></p>
+
+<h4 id="rowbounds">RowBounds</h4>
+
+<p>默认为<b>内存分页</b>，可以配合<a href="http://git.oschina.net/free/Mybatis_PageHelper">PageHelper</a>实现物理分页</p>
+
+<p>接口：<code>SelectRowBoundsMapper&lt;T&gt;</code><br>
+方法：<code>List&lt;T&gt; selectByRowBounds(T record, RowBounds rowBounds);</code><br>
+说明：根据实体属性和RowBounds进行分页查询<br><br></p>
+
+<p>接口：<code>SelectByExampleRowBoundsMapper&lt;T&gt;</code><br>
+方法：<code>List&lt;T&gt; selectByExampleAndRowBounds(Object example, RowBounds rowBounds);</code><br>
+说明：根据example条件和RowBounds进行分页查询<br><br></p>
+
+<p>接口：<code>SelectByConditionRowBoundsMapper&lt;T&gt;</code><br>
+方法：<code>List&lt;T&gt; selectByConditionAndRowBounds(Object condition, RowBounds rowBounds);</code><br>
+说明：根据example条件和RowBounds进行分页查询，该方法和selectByExampleAndRowBounds完全一样，只是名字改成了Condition<br><br></p>
+
+<h5 id="rowbounds-组合接口">RowBounds 组合接口</h5>
+
+<p>接口：<code>RowBoundsMapper&lt;T&gt;</code><br>
+方法：包含上面RowBounds中的前两个方法，不包含<code>selectByConditionAndRowBounds</code><br><br></p>
+
+<h4 id="special-特殊接口">special 特殊接口</h4>
+
+<p>这些接口针对部分数据库设计，不是所有数据库都支持</p>
+
+<p>接口：<code>InsertListMapper&lt;T&gt;</code><br>
+方法：<code>int insertList(List&lt;T&gt; recordList);</code><br>
+说明：批量插入，支持批量插入的数据库可以使用，例如MySQL,H2等，另外该接口限制实体包含<code>id</code>属性并且必须为自增列<br><br></p>
+
+<p>接口：<code>InsertUseGeneratedKeysMapper&lt;T&gt;</code><br>
+方法：<code>int insertUseGeneratedKeys(T record);</code><br>
+说明：插入数据，限制为实体包含<code>id</code>属性并且必须为自增列，实体配置的主键策略无效<br><br></p>
+
+<h4 id="mysql-专用">MySQL 专用</h4>
+
+<p>接口：<code>MySqlMapper&lt;T&gt;</code><br>
+继承方法：<code>int insertList(List&lt;T&gt; recordList);</code><br>
+继承方法：<code>int insertUseGeneratedKeys(T record);</code><br>
+说明：该接口不包含方法，继承了special中的<code>InsertListMapper&lt;T&gt;</code>和<code>InsertUseGeneratedKeysMapper&lt;T&gt;</code><br><br></p>
+
+<h4 id="sqlserver-专用">SqlServer 专用</h4>
+
+<p>由于sqlserver中插入自增主键时，不能使用<code>null</code>插入，不能在insert语句中出现<code>id</code>。</p>
+
+<p>注意SqlServer的两个特有插入方法都使用了</p>
+
+<p><code>@Options(useGeneratedKeys = true, keyProperty = &quot;id&quot;)</code></p>
+
+<p>这就要求表的主键为<code>id</code>，且为自增，如果主键不叫<code>id</code>可以看高级教程中的解决方法。</p>
+
+<p>另外这俩方法和<b>base</b>中的插入方法重名，不能同时存在！</p>
+
+<p>如果某种数据库和SqlServer这里类似，也可以使用这些接口（需要先测试）。</p>
+
+<p>接口：<code>InsertMapper</code><br>
+方法：<code>int insert(T record);</code><br>
+说明：插入数据库，<code>null</code>值也会插入，不会使用列的默认值<br><br></p>
+
+<p>接口：<code>InsertSelectiveMapper</code><br>
+方法：<code>int insertSelective(T record);</code><br>
+说明：插入数据库，null的属性不会保存，会使用数据库默认值<br><br></p>
+
+<p>接口：<code>SqlServerMapper</code><br>
+说明：这是上面两个接口的组合接口。<br><br></p>
+
+<h4 id="ids-接口">Ids 接口</h4>
+
+<p>通过操作ids字符串进行操作，ids 如 &ldquo;1,2,3&rdquo; 这种形式的字符串，这个方法要求实体类中有且只有一个带有<code>@Id</code>注解的字段，否则会抛出异常。</p>
+
+<p>接口：<code>SelectByIdsMapper</code><br>
+方法：<code>List&lt;T&gt; selectByIds(String ids)</code><br>
+说明：根据主键字符串进行查询，类中只有存在一个带有@Id注解的字段<br><br></p>
+
+<p>接口：<code>DeleteByIdsMapper</code><br>
+方法：<code>int deleteByIds(String ids)</code><br>
+说明：根据主键字符串进行删除，类中只有存在一个带有@Id注解的字段<br><br></p>
+
+<h5 id="ids-组合接口">Ids 组合接口</h5>
+
+<p>接口：<code>IdsMapper&lt;T&gt;</code><br>
+方法：包含上面Ids中的前两个方法<br><br></p>
+
+<h4 id="mapper-t-接口"><code>Mapper&lt;T&gt;</code> 接口</h4>
+
+<p>接口：<code>Mapper&lt;T&gt;</code><br>
+该接口兼容Mapper2.x版本，继承了<code>BaseMapper&lt;T&gt;</code>, <code>ExampleMapper&lt;T&gt;</code>, <code>RowBoundsMapper&lt;T&gt;</code>三个组合接口。<br><br></p>
+
+
+      
+      
+        </div> 
+      
+      </div>
+    </div>
+
+    
+
+    <div id="navigation">
+        
+        
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="https://mapperhelper.github.io/js/clipboard.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/perfect-scrollbar.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/jquery.sticky-kit.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/featherlight.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/html5shiv-printshiv.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://mapperhelper.github.io/js/modernizr.custom.71422.js"></script>
+    <script src="https://mapperhelper.github.io/js/learn.js"></script>
+    <script src="https://mapperhelper.github.io/js/hugo-learn.js"></script>
+    
+
+  </body>
+</html>
+
+

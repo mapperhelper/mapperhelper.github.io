@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://mapperhelper.github.io/docs/1.integration/</loc>
+    <lastmod>2017-06-04T15:21:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mapperhelper.github.io/docs/2.use/</loc>
+    <lastmod>2017-06-04T15:21:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mapperhelper.github.io/docs/3.usembg/</loc>
+    <lastmod>2017-06-04T15:21:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mapperhelper.github.io/docs/3-2.mapper-uuid/</loc>
+    <lastmod>2017-06-04T15:21:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mapperhelper.github.io/docs/5.professional/</loc>
+    <lastmod>2017-06-04T15:21:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mapperhelper.github.io/docs/6.mymapper/</loc>
+    <lastmod>2017-06-04T15:21:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mapperhelper.github.io/docs/7.use330/</loc>
+    <lastmod>2017-06-04T15:21:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mapperhelper.github.io/docs/8.updateto3/</loc>
+    <lastmod>2017-06-04T15:21:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mapperhelper.github.io/all/</loc>
+    <lastmod>2017-06-04T15:21:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mapperhelper.github.io/faq/</loc>
+    <lastmod>2017-06-04T15:21:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mapperhelper.github.io/changelog/</loc>
+    <lastmod>2017-06-04T15:21:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mapperhelper.github.io/docs/</loc>
+    <lastmod>2017-06-04T15:21:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mapperhelper.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mapperhelper.github.io/</loc>
+    <lastmod>2017-06-04T15:21:18+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mapperhelper.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

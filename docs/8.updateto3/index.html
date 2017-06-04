@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.21" />
+    <meta name="description" content="">
+
+
+    
+
+    
+    <title>8. Mapper2 升级 3 注意事项</title>
+    <link href="https://mapperhelper.github.io/css/nucleus.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/hybrid.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/featherlight.min.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/horsey.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/theme.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/hugo-theme.css" rel="stylesheet">
+    <script src="https://mapperhelper.github.io/js/jquery-2.x.min.js"></script>
+    <style type="text/css">:root #header + #content > #left > #rlblock_left
+    {display:none !important;}</style>
+    
+
+  </head>
+  <body class="" data-url="/docs/8.updateto3/">
+    
+    <nav id="sidebar">
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="http://getgrav.org" style="font-weight:bold;">
+MyBatis 通用 Mapper
+</a>
+
+    </div>
+    
+</div>
+
+
+  <div class="highlightable">
+    <ul class="topics">
+      
+        
+        
+          
+          
+            
+          
+        
+          
+          
+            
+          
+        
+          
+          
+            
+          
+        
+          
+          
+            
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  parent" data-nav-id="/docs/">
+        <a href="/docs/">
+          <span>
+            
+              <b>1. </b>
+            
+             MyBatis 通用 Mapper
+            
+           </span>
+        </a>
+        
+        <ul>
+          
+            <li class="dd-item " data-nav-id="/docs/1.integration/">
+              <a href="/docs/1.integration/">
+                <span>1. 集成通用 Mapper     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/2.use/">
+              <a href="/docs/2.use/">
+                <span>2. 使用通用 Mapper     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/3.usembg/">
+              <a href="/docs/3.usembg/">
+                <span>3. MyBatis Generator 插件     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/3-2.mapper-uuid/">
+              <a href="/docs/3-2.mapper-uuid/">
+                <span>4. UUID 简单示例     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/5.professional/">
+              <a href="/docs/5.professional/">
+                <span>5. 高级用法     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/6.mymapper/">
+              <a href="/docs/6.mymapper/">
+                <span>6. 开发自己的通用接口方法     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/7.use330/">
+              <a href="/docs/7.use330/">
+                <span>7. 3.3.0 版本新增内容使用文档     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item active" data-nav-id="/docs/8.updateto3/">
+              <a href="/docs/8.updateto3/">
+                <span>8. Mapper2 升级 3 注意事项     </i></span>
+              </a>
+            </li>
+          
+        </ul>
+        
+      </li>
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  " data-nav-id="/all/">
+        <a href="/all/">
+          <span>
+            
+              <b>2. </b>
+            
+             Mapper 接口大全
+            
+           </span>
+        </a>
+        
+      </li>
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  " data-nav-id="/faq/">
+        <a href="/faq/">
+          <span>
+            
+              <b>2. </b>
+            
+             Mapper3常见问题和用法
+            
+           </span>
+        </a>
+        
+      </li>
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  " data-nav-id="/changelog/">
+        <a href="/changelog/">
+          <span>
+            
+              <b>3. </b>
+            
+             更新日志
+            
+           </span>
+        </a>
+        
+      </li>
+      
+      
+    </ul>
+    <hr>
+     
+    <section id="footer">
+      <p>
+  <a href="https://github.com/abel533/Mapper">view on GitHub</a>
+</p>
+<br/>
+<p>
+  <a href="http://git.oschina.net/free/Mapper">view on GitOsc</a>
+</p>
+
+    </section>
+  </div>
+</nav>
+
+        <section id="body">
+        <div id="overlay"></div>
+
+        <div class="padding highlightable sticky-parent">
+            
+            <div class="sticky-spacer">
+              <div id="top-bar">
+              
+              <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                  <span id="sidebar-toggle-span">
+                      <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                        <i class="fa fa-bars"></i>
+                      </a>
+                  </span>
+                
+                
+                  
+                  
+                  
+                    
+                    
+                <a href="/docs/" itemprop="url"><span itemprop="title">MyBatis 通用 Mapper</span></a> <i class="fa fa-angle-right"></i>
+                    
+                  
+                
+                <span itemprop="title"> 8. Mapper2 升级 3 注意事项</span>
+              </div>
+              
+            </div>
+
+            </div>
+            
+              <div id="body-inner">
+                
+                <h1>8. Mapper2 升级 3 注意事项</h1>
+                
+
+<p>Mapper2.x 升级 Mapper 3 注意事项</p>
+
+<p>##如果你只用到了<code>Mapper&lt;T&gt;</code>`接口，那么可以直接升级到3.0.0版本</p>
+
+<p>可以下载新的Jar替换，或者直接把Maven中Mapper的版本号改为<code>3.0.0</code></p>
+
+<p>##如果你用到了<code>EntityMapper</code></p>
+
+<p>你还需要<code>EntityMapper</code>：<a href="http://git.oschina.net/free/EntityMapper">http://git.oschina.net/free/EntityMapper</a></p>
+
+<p>如果是用maven，可以直接添加：</p>
+
+<pre><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;com.github.abel533&lt;/groupId&gt;
+    &lt;artifactId&gt;entitymapper&lt;/artifactId&gt;
+    &lt;version&gt;1.0.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<p>下载jar包：<a href="https://oss.sonatype.org/content/repositories/releases/com/github/abel533/entitymapper/">https://oss.sonatype.org/content/repositories/releases/com/github/abel533/entitymapper/</a></p>
+
+<p>##如果你用到了<code>SqlMapper</code></p>
+
+<p>你可以加入上面的<code>EntityMapper</code>。</p>
+
+<p>或者因为<code>SqlMapper</code>本身就一个类，你可以把这个类加到自己项目中。</p>
+
+<p><code>SqlMapper</code>:<a href="http://git.oschina.net/free/EntityMapper/blob/master/src/main/java/com/github/abel533/sql/SqlMapper.java?dir=0&amp;filepath=src%2Fmain%2Fjava%2Fcom%2Fgithub%2Fabel533%2Fsql%2FSqlMapper.java&amp;oid=522385417e49282a7036b6544cb83f4405b8d7f3&amp;sha=c1425e7e157425f32daffbfd97fe576343ff6f1a">SqlMapper.java</a></p>
+
+<p>#后续更新维护</p>
+
+<ul>
+<li><p>Mapper3以后会持续维护更新，添加一些针对性的通用方法。</p></li>
+
+<li><p>Mapper2.x版本仍然会维护一段时间，只解决bug，不会有新内容。</p></li>
+
+<li><p>EntityMapper项目只是为了方便Mapper2升级到Mapper3时可以使用EntityMapper和SqlMapper，以后不会维护。</p></li>
+
+<li><p>SqlMapper因为只有一个类，所以有时间的时候还会进行完善。</p></li>
+</ul>
+
+
+      
+      
+      </div>
+    </div>
+
+    
+
+    <div id="navigation">
+        
+        
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="https://mapperhelper.github.io/js/clipboard.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/perfect-scrollbar.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/jquery.sticky-kit.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/featherlight.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/html5shiv-printshiv.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://mapperhelper.github.io/js/modernizr.custom.71422.js"></script>
+    <script src="https://mapperhelper.github.io/js/learn.js"></script>
+    <script src="https://mapperhelper.github.io/js/hugo-learn.js"></script>
+    
+
+  </body>
+</html>
+

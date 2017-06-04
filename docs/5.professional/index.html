@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.21" />
+    <meta name="description" content="">
+
+
+    
+
+    
+    <title>5. 高级用法</title>
+    <link href="https://mapperhelper.github.io/css/nucleus.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/hybrid.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/featherlight.min.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/horsey.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/theme.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/hugo-theme.css" rel="stylesheet">
+    <script src="https://mapperhelper.github.io/js/jquery-2.x.min.js"></script>
+    <style type="text/css">:root #header + #content > #left > #rlblock_left
+    {display:none !important;}</style>
+    
+
+  </head>
+  <body class="" data-url="/docs/5.professional/">
+    
+    <nav id="sidebar">
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="http://getgrav.org" style="font-weight:bold;">
+MyBatis 通用 Mapper
+</a>
+
+    </div>
+    
+</div>
+
+
+  <div class="highlightable">
+    <ul class="topics">
+      
+        
+        
+          
+          
+            
+          
+        
+          
+          
+            
+          
+        
+          
+          
+            
+          
+        
+          
+          
+            
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  parent" data-nav-id="/docs/">
+        <a href="/docs/">
+          <span>
+            
+              <b>1. </b>
+            
+             MyBatis 通用 Mapper
+            
+           </span>
+        </a>
+        
+        <ul>
+          
+            <li class="dd-item " data-nav-id="/docs/1.integration/">
+              <a href="/docs/1.integration/">
+                <span>1. 集成通用 Mapper     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/2.use/">
+              <a href="/docs/2.use/">
+                <span>2. 使用通用 Mapper     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/3.usembg/">
+              <a href="/docs/3.usembg/">
+                <span>3. MyBatis Generator 插件     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/3-2.mapper-uuid/">
+              <a href="/docs/3-2.mapper-uuid/">
+                <span>4. UUID 简单示例     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item active" data-nav-id="/docs/5.professional/">
+              <a href="/docs/5.professional/">
+                <span>5. 高级用法     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/6.mymapper/">
+              <a href="/docs/6.mymapper/">
+                <span>6. 开发自己的通用接口方法     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/7.use330/">
+              <a href="/docs/7.use330/">
+                <span>7. 3.3.0 版本新增内容使用文档     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/8.updateto3/">
+              <a href="/docs/8.updateto3/">
+                <span>8. Mapper2 升级 3 注意事项     </i></span>
+              </a>
+            </li>
+          
+        </ul>
+        
+      </li>
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  " data-nav-id="/all/">
+        <a href="/all/">
+          <span>
+            
+              <b>2. </b>
+            
+             Mapper 接口大全
+            
+           </span>
+        </a>
+        
+      </li>
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  " data-nav-id="/faq/">
+        <a href="/faq/">
+          <span>
+            
+              <b>2. </b>
+            
+             Mapper3常见问题和用法
+            
+           </span>
+        </a>
+        
+      </li>
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  " data-nav-id="/changelog/">
+        <a href="/changelog/">
+          <span>
+            
+              <b>3. </b>
+            
+             更新日志
+            
+           </span>
+        </a>
+        
+      </li>
+      
+      
+    </ul>
+    <hr>
+     
+    <section id="footer">
+      <p>
+  <a href="https://github.com/abel533/Mapper">view on GitHub</a>
+</p>
+<br/>
+<p>
+  <a href="http://git.oschina.net/free/Mapper">view on GitOsc</a>
+</p>
+
+    </section>
+  </div>
+</nav>
+
+        <section id="body">
+        <div id="overlay"></div>
+
+        <div class="padding highlightable sticky-parent">
+            
+            <div class="sticky-spacer">
+              <div id="top-bar">
+              
+              <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                  <span id="sidebar-toggle-span">
+                      <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                        <i class="fa fa-bars"></i>
+                      </a>
+                  </span>
+                
+                
+                  
+                  
+                  
+                    
+                    
+                <a href="/docs/" itemprop="url"><span itemprop="title">MyBatis 通用 Mapper</span></a> <i class="fa fa-angle-right"></i>
+                    
+                  
+                
+                <span itemprop="title"> 5. 高级用法</span>
+              </div>
+              
+            </div>
+
+            </div>
+            
+              <div id="body-inner">
+                
+                <h1>5. 高级用法</h1>
+                
+
+
+
+<p>如果你在使用通用 Mapper 过程中已经得心应手，并且几乎没有遇到过任何问题。那么，你可以看该部分内容。</p>
+
+<p>如果你对Mapper2已经很熟悉，想使用Mapper3新的方式，你也可以看该部分内容。</p>
+
+<p>但是在Mapper3相关的文档中，更多是按照Mapper2的方式来讲的。</p>
+
+<p>在<a href="http://git.oschina.net/free/Mapper/blob/master/wiki/mapper3/1.Changes.md">Mapper3变化</a>中提到了许多新的变化。</p>
+
+<p>如果使用这些新的特性，是这部分的主要内容。</p>
+
+<p>在看下面内容前，请先阅读<a href="http://git.oschina.net/free/Mapper/blob/master/wiki/mapper3/1.Changes.md">Mapper3变化</a>。</p>
+
+<h2 id="接口可以自定义搭配继承">接口可以自定义搭配继承</h2>
+
+<p>如果你想按需选择接口，不想使用<code>Mapper&lt;T&gt;</code>包含的那么多的方法，你可以创建自己的<code>MyMapper&lt;T&gt;</code>，自己搭配想要的方法。</p>
+
+<p>Mapper3提供的全部的方法，可以查看<a href="http://git.oschina.net/free/Mapper/blob/master/wiki/mapper3/5.Mappers.md">Mapper3通用接口大全</a></p>
+
+<h2 id="如何创建自己的-mymapper-t-呢">如何创建自己的<code>MyMapper&lt;T&gt;</code>呢？</h2>
+
+<p>这里只是简单的举例，仅供参考。</p>
+
+<h3 id="我需要那些方法">我需要那些方法？</h3>
+
+<ol>
+<li>假设我有一类表的操作仅设计到查询操作，不需要<code>insert,update,delete</code>等操作。</li>
+</ol>
+
+<p>我可能会选择<code>SelectMapper&lt;T&gt;</code>,<code>SelectOneMapper&lt;T&gt;</code>，<code>SelectRowBoundsMapper&lt;T&gt;</code>,<code>SelectByExampleRowBoundsMapper&lt;T&gt;</code>接口。</p>
+
+<p>那么我的<code>MyMapper&lt;T&gt;</code>就是下面的样子:</p>
+
+<pre><code class="language-java">public interface MyMapper&lt;T&gt; extends
+    SelectMapper&lt;T&gt;,
+    SelectOneMapper&lt;T&gt;,
+    SelectRowBoundsMapper&lt;T&gt;,
+    SelectByExampleRowBoundsMapper&lt;T&gt; {
+
+}
+</code></pre>
+
+<ol>
+<li>假设我项目中需要用到批量插入和基本才CRUD操作，那么<code>MyMapper&lt;T&gt;</code>就是下面的样子:</li>
+</ol>
+
+<pre><code class="language-java">public interface MyMapper&lt;T&gt; extends
+    BaseMapper&lt;T&gt;,
+    InsertListMapper&lt;T&gt; {
+
+}
+</code></pre>
+
+<ol>
+<li>假如我想用<code>Mapper&lt;T&gt;</code>的所有方法和<code>MySql&lt;T&gt;</code>的方法，那么<code>MyMapper&lt;T&gt;</code>就是下面的样子:</li>
+</ol>
+
+<pre><code class="language-java">public interface MyMapper&lt;T&gt; extends
+   Mapper&lt;T&gt;,
+   MySqlMapper&lt;T&gt; {
+
+}
+</code></pre>
+
+<p>设计好自己的<code>MyMapper&lt;T&gt;</code>后，还需要进行配置。</p>
+
+<h3 id="配置-mymapper-t">配置<code>MyMapper&lt;T&gt;</code></h3>
+
+<pre><code class="language-xml">&lt;bean class=&quot;tk.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
+    &lt;property name=&quot;basePackage&quot; value=&quot;com.isea533.mybatis.mapper&quot;/&gt;
+    &lt;property name=&quot;properties&quot;&gt;
+        &lt;value&gt;
+            mappers=com.xxx.xxx.MyMapper
+        &lt;/value&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;
+</code></pre>
+
+<p>只需要按照上面的方式配置即可。</p>
+
+<p>如果我自己定义了<code>MyMapper</code>,<code>MyMapper2</code>,<code>MyMapper3</code>，可以如下配置：</p>
+
+<pre><code class="language-xml">&lt;bean class=&quot;tk.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
+    &lt;property name=&quot;basePackage&quot; value=&quot;com.isea533.mybatis.mapper&quot;/&gt;
+    &lt;property name=&quot;properties&quot;&gt;
+        &lt;value&gt;
+            mappers=com.xxx.xxx.MyMapper,com.xxx.xxx.MyMapper2,com.xxx.xxx.MyMapper3
+        &lt;/value&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;
+</code></pre>
+
+<p>如果你觉得配置太长不方法，你可以这样:</p>
+
+<pre><code class="language-java">public interface AllMapper&lt;T&gt; extends
+    MyMapper&lt;T&gt;,
+    MyMapper2&lt;T&gt;,
+    MyMapper3&lt;T&gt; {
+
+}
+</code></pre>
+
+<p>然后配置<code>mappers=com.xxx.xxx.AllMapper</code>即可。</p>
+
+<h2 id="高级重定义方法">高级重定义方法</h2>
+
+<p>这里举一个复杂的例子。在<b>special特殊接口</b>中有一个批量插入的方法。</p>
+
+<pre><code class="language-java">public interface InsertListMapper&lt;T&gt; {
+
+    /**
+     * 批量插入，支持数据库自增字段，支持回写
+     *
+     * @param recordList
+     * @return
+     */
+    @Options(useGeneratedKeys = true, keyProperty = &quot;id&quot;)
+    @InsertProvider(type = SpecialProvider.class, method = &quot;dynamicSQL&quot;)
+    int insertList(List&lt;T&gt; recordList);
+
+    /**
+     * ======如果主键不是id怎么用？==========
+     * 假设主键的属性名是uid,那么新建一个Mapper接口如下
+     * &lt;pre&gt;
+        public interface InsertUidListMapper&lt;T&gt; {
+            @Options(useGeneratedKeys = true, keyProperty = &quot;uid&quot;)
+            @InsertProvider(type = SpecialProvider.class, method = &quot;dynamicSQL&quot;)
+            int insertList(List&lt;T&gt; recordList);
+        }
+     * 只要修改keyProperty = &quot;uid&quot;就可以
+     *
+     * 然后让你自己的Mapper继承InsertUidListMapper&lt;T&gt;即可
+     *
+     * &lt;/pre&gt;
+     */
+}
+</code></pre>
+
+<p>这里注释提到了一种情况，那就是<b>如果主键不是id怎么用?</b></p>
+
+<p>按照注释中所说的，你可以自己创建一个Mapper接口，然后修改<code>keyProperty</code>属性，如下：</p>
+
+<pre><code class="language-java">public interface InsertUidListMapper&lt;T&gt; {
+    @Options(useGeneratedKeys = true, keyProperty = &quot;uid&quot;)
+    @InsertProvider(type = SpecialProvider.class, method = &quot;dynamicSQL&quot;)
+    int insertList(List&lt;T&gt; recordList);
+}
+</code></pre>
+
+<h2 id="mapper3通用接口大全">Mapper3通用接口大全</h2>
+
+<p>Mapper3提供的全部接口，一可以看源码，二可以看<a href="http://git.oschina.net/free/Mapper/blob/master/wiki/mapper3/5.Mappers.md">Mapper3通用接口大全</a></p>
+
+<h2 id="如何开发自己的通用接口">如何开发自己的通用接口</h2>
+
+<p>Mapper3提供了更简单容易理解的方式，你可以看<a href="http://git.oschina.net/free/Mapper/blob/master/wiki/mapper3/6.MyMapper.md">快速开发自己的通用接口</a></p>
+
+<p>除了新增的这种方式外，还有Mapper2支持的两种方式，你可以看<a href="http://git.oschina.net/free/Mapper/blob/master/wiki/mapper/3.ExtendMapper.md">如何开发自己的通用Mapper</a></p>
+
+
+      
+      
+      </div>
+    </div>
+
+    
+
+    <div id="navigation">
+        
+        
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="https://mapperhelper.github.io/js/clipboard.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/perfect-scrollbar.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/jquery.sticky-kit.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/featherlight.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/html5shiv-printshiv.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://mapperhelper.github.io/js/modernizr.custom.71422.js"></script>
+    <script src="https://mapperhelper.github.io/js/learn.js"></script>
+    <script src="https://mapperhelper.github.io/js/hugo-learn.js"></script>
+    
+
+  </body>
+</html>
+

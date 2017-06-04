@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.21" />
+    <meta name="description" content="">
+
+
+    
+
+    
+    <title>3. MyBatis Generator 插件</title>
+    <link href="https://mapperhelper.github.io/css/nucleus.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/hybrid.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/featherlight.min.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/horsey.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/theme.css" rel="stylesheet">
+    <link href="https://mapperhelper.github.io/css/hugo-theme.css" rel="stylesheet">
+    <script src="https://mapperhelper.github.io/js/jquery-2.x.min.js"></script>
+    <style type="text/css">:root #header + #content > #left > #rlblock_left
+    {display:none !important;}</style>
+    
+
+  </head>
+  <body class="" data-url="/docs/3.usembg/">
+    
+    <nav id="sidebar">
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="http://getgrav.org" style="font-weight:bold;">
+MyBatis 通用 Mapper
+</a>
+
+    </div>
+    
+</div>
+
+
+  <div class="highlightable">
+    <ul class="topics">
+      
+        
+        
+          
+          
+            
+          
+        
+          
+          
+            
+          
+        
+          
+          
+            
+          
+        
+          
+          
+            
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  parent" data-nav-id="/docs/">
+        <a href="/docs/">
+          <span>
+            
+              <b>1. </b>
+            
+             MyBatis 通用 Mapper
+            
+           </span>
+        </a>
+        
+        <ul>
+          
+            <li class="dd-item " data-nav-id="/docs/1.integration/">
+              <a href="/docs/1.integration/">
+                <span>1. 集成通用 Mapper     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/2.use/">
+              <a href="/docs/2.use/">
+                <span>2. 使用通用 Mapper     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item active" data-nav-id="/docs/3.usembg/">
+              <a href="/docs/3.usembg/">
+                <span>3. MyBatis Generator 插件     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/3-2.mapper-uuid/">
+              <a href="/docs/3-2.mapper-uuid/">
+                <span>4. UUID 简单示例     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/5.professional/">
+              <a href="/docs/5.professional/">
+                <span>5. 高级用法     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/6.mymapper/">
+              <a href="/docs/6.mymapper/">
+                <span>6. 开发自己的通用接口方法     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/7.use330/">
+              <a href="/docs/7.use330/">
+                <span>7. 3.3.0 版本新增内容使用文档     </i></span>
+              </a>
+            </li>
+          
+            <li class="dd-item " data-nav-id="/docs/8.updateto3/">
+              <a href="/docs/8.updateto3/">
+                <span>8. Mapper2 升级 3 注意事项     </i></span>
+              </a>
+            </li>
+          
+        </ul>
+        
+      </li>
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  " data-nav-id="/all/">
+        <a href="/all/">
+          <span>
+            
+              <b>2. </b>
+            
+             Mapper 接口大全
+            
+           </span>
+        </a>
+        
+      </li>
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  " data-nav-id="/faq/">
+        <a href="/faq/">
+          <span>
+            
+              <b>2. </b>
+            
+             Mapper3常见问题和用法
+            
+           </span>
+        </a>
+        
+      </li>
+      
+      
+      
+
+      
+      
+      
+        
+          
+        
+      
+      
+      
+
+      <li class="dd-item  " data-nav-id="/changelog/">
+        <a href="/changelog/">
+          <span>
+            
+              <b>3. </b>
+            
+             更新日志
+            
+           </span>
+        </a>
+        
+      </li>
+      
+      
+    </ul>
+    <hr>
+     
+    <section id="footer">
+      <p>
+  <a href="https://github.com/abel533/Mapper">view on GitHub</a>
+</p>
+<br/>
+<p>
+  <a href="http://git.oschina.net/free/Mapper">view on GitOsc</a>
+</p>
+
+    </section>
+  </div>
+</nav>
+
+        <section id="body">
+        <div id="overlay"></div>
+
+        <div class="padding highlightable sticky-parent">
+            
+            <div class="sticky-spacer">
+              <div id="top-bar">
+              
+              <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                  <span id="sidebar-toggle-span">
+                      <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                        <i class="fa fa-bars"></i>
+                      </a>
+                  </span>
+                
+                
+                  
+                  
+                  
+                    
+                    
+                <a href="/docs/" itemprop="url"><span itemprop="title">MyBatis 通用 Mapper</span></a> <i class="fa fa-angle-right"></i>
+                    
+                  
+                
+                <span itemprop="title"> 3. MyBatis Generator 插件</span>
+              </div>
+              
+            </div>
+
+            </div>
+            
+              <div id="body-inner">
+                
+                <h1>3. MyBatis Generator 插件</h1>
+                
+
+
+
+<p>通用Mapper在1.0.0版本的时候增加了MyBatis Generator(以下简称MBG)插件，使用该插件可以很方便的生成实体类、Mapper接口以及对应的XML文件。</p>
+
+<p>本篇文档就是讲述如何在MBG中使用该插件。</p>
+
+<p>首先对MBG不太了解的可以先阅读下面的文档：</p>
+
+<h2 id="mybatis-geneator-详解">Mybatis Geneator 详解</h2>
+
+<p><a href="http://git.oschina.net/free/Mybatis_Utils/tree/master/MybatisGeneator/MybatisGeneator.md">http://git.oschina.net/free/Mybatis_Utils/tree/master/MybatisGeneator/MybatisGeneator.md</a></p>
+
+<h2 id="使用通用-mapper-插件">使用通用 Mapper 插件</h2>
+
+<p>插件代码在<code>tk.mybatis.mapper.generator</code>包下面，一共有如下两个类：</p>
+
+<ul>
+<li><code>MapperCommentGenerator</code>：该类用于生成数据库备注字段的注释，以及实体类字段的注解。</li>
+<li><code>MapperPlugin</code>：插件的实现类，该类默认使用上面这个注释生成器，插件屏蔽了一般的CRUD方法（保留了Example），插件可以生成实体的<code>@Table</code>注解。<br /></li>
+</ul>
+
+<p>另外本项目为了在Maven中配置更简单，从1.0.0版本开始上传Maven中央仓库。</p>
+
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;tk.mybatis&lt;/groupId&gt;
+    &lt;artifactId&gt;mapper&lt;/artifactId&gt;
+    &lt;!-- 建议使用最新版本 --&gt;
+    &lt;version&gt;x.x.x&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<p>为什么用maven更方便，稍后会说明。</p>
+
+<p>运行MBG有多种方法，这里只介绍两种比较常见的方法。并且有关的内容会针对这样的运行方式进行配置。</p>
+
+<h3 id="一-使用java编码方式运行mbg">一、使用Java编码方式运行MBG</h3>
+
+<p>本项目测试代码中包含这个例子。</p>
+
+<p>使用这种方式，首先下载MBG的Jar包（本项目测试代码中使用maven引入jar包，使用Java代码运行）。</p>
+
+<p>MBG下载地址:<a href="http://repo1.maven.org/maven2/org/mybatis/generator/mybatis-generator-core/">http://repo1.maven.org/maven2/org/mybatis/generator/mybatis-generator-core/</a></p>
+
+<p>Java代码很容易，和文档中的一样：</p>
+
+<pre><code>List&lt;String&gt; warnings = new ArrayList&lt;String&gt;();
+boolean overwrite = true;
+ConfigurationParser cp = new ConfigurationParser(warnings);
+Configuration config = cp.parseConfiguration(
+        Generator.class.getResourceAsStream(&quot;/generator/generatorConfig.xml&quot;));
+DefaultShellCallback callback = new DefaultShellCallback(overwrite);
+MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
+myBatisGenerator.generate(null);
+</code></pre>
+
+<p>你只需要在你当前的项目中创建一个类，添加一个<code>main</code>方法，在<code>main</code>中写上上面的代码即可。</p>
+
+<p>这段代码容易，最主要的一个内容是<code>&quot;generatorConfig.xml&quot;</code>,我们应该如何配置该类。</p>
+
+<p>下面是一个<a href="http://git.oschina.net/free/Mapper/blob/master/src/test/resources/generator/generatorConfig.xml"><code>generatorConfig.xml</code></a>的例子：</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE generatorConfiguration
+        PUBLIC &quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot;
+        &quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;
+
+&lt;generatorConfiguration&gt;
+  &lt;context id=&quot;Mysql&quot; targetRuntime=&quot;MyBatis3Simple&quot; defaultModelType=&quot;flat&quot;&gt;
+
+    &lt;plugin type=&quot;tk.mybatis.mapper.generator.MapperPlugin&quot;&gt;
+      &lt;property name=&quot;mappers&quot; value=&quot;tk.mybatis.mapper.common.Mapper&quot;/&gt;
+      &lt;!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true --&gt;
+      &lt;property name=&quot;caseSensitive&quot; value=&quot;true&quot;/&gt;
+    &lt;/plugin&gt;
+
+    &lt;jdbcConnection driverClass=&quot;com.mysql.jdbc.Driver&quot;
+                    connectionURL=&quot;jdbc:mysql://localhost:3306/test&quot;
+                    userId=&quot;root&quot;
+                    password=&quot;&quot;&gt;
+    &lt;/jdbcConnection&gt;
+
+    &lt;javaModelGenerator targetPackage=&quot;test.model&quot; targetProject=&quot;G:\MyProject\src\main\java&quot;/&gt;
+
+    &lt;sqlMapGenerator targetPackage=&quot;mapper&quot;  targetProject=&quot;G:\MyProject\src\main\resources&quot;/&gt;
+
+    &lt;javaClientGenerator targetPackage=&quot;test.mapper&quot; targetProject=&quot;G:\MyProject\src\main\java&quot; type=&quot;XMLMAPPER&quot; /&gt;
+
+    &lt;table tableName=&quot;%&quot; &gt;
+      &lt;generatedKey column=&quot;id&quot; sqlStatement=&quot;Mysql&quot; identity=&quot;true&quot;/&gt;
+    &lt;/table&gt;
+  &lt;/context&gt;
+&lt;/generatorConfiguration&gt;
+</code></pre>
+
+<p>下面逐段对上面的配置进行详解。</p>
+
+<p>看下面这段，这段代码配置了通用Mapper的插件<code>tk.mybatis.mapper.generator.MapperPlugin</code>，该插件有一个必选的<code>&lt;property&gt;</code>属性<code>mappers</code>，这里的<code>mappers</code>和通用Mapper中的<code>mappers</code>配置含义一样，就是我们使用的通用Mapper接口，多个通用Mapper接口可以用逗号隔开。</p>
+
+<pre><code>&lt;plugin type=&quot;tk.mybatis.mapper.generator.MapperPlugin&quot;&gt;
+    &lt;property name=&quot;mappers&quot; value=&quot;tk.mybatis.mapper.common.Mapper&quot;/&gt;
+&lt;/plugin&gt;
+</code></pre>
+
+<p>关于本插件，最重要的内容就是上面这个配置。下面要说的其他配置和普通的一致。</p>
+
+<p>下面这段是数据库配置信息，由于需要连接数据库，需要保证项目的classpath下面有数据库的JDBC驱动。</p>
+
+<pre><code>&lt;jdbcConnection driverClass=&quot;com.mysql.jdbc.Driver&quot;
+                    connectionURL=&quot;jdbc:mysql://localhost:3306/test&quot;
+                    userId=&quot;root&quot;
+                    password=&quot;&quot;&gt;
+&lt;/jdbcConnection&gt;
+</code></pre>
+
+<p>下面这个配置是生成实体类的配置，是一个必须配置的内容。</p>
+
+<pre><code>&lt;javaModelGenerator targetPackage=&quot;test.model&quot; targetProject=&quot;G:\MyProject\src\main\java&quot;/&gt;
+</code></pre>
+
+<p>再下面的<code>sqlMapGenerator</code>是一个可选的配置，配置后可以生成Mapper接口对应的XML文件。</p>
+
+<pre><code>&lt;sqlMapGenerator targetPackage=&quot;mapper&quot;  targetProject=&quot;G:\MyProject\src\main\resources&quot;/&gt;
+</code></pre>
+
+<p>再往下就是通用Mapper接口的配置，配置<code>javaClientGenerator</code>后会生成对应的接口文件，该接口会自动继承前面配置的通用Mapper接口。</p>
+
+<pre><code>&lt;javaClientGenerator targetPackage=&quot;test.mapper&quot; targetProject=&quot;G:\MyProject\src\main\java&quot; type=&quot;XMLMAPPER&quot; /&gt;
+</code></pre>
+
+<p>最后一个配置<code>table</code>,这里使用SQL通配符<code>%</code>来匹配所有表。<code>generatedKey</code>意味着所有的表都有一个<code>id</code>自增的主键，在生成实体类的时候会根据该配置生成相应的注解。</p>
+
+<pre><code>&lt;table tableName=&quot;%&quot; &gt;
+    &lt;generatedKey column=&quot;id&quot; sqlStatement=&quot;Mysql&quot; identity=&quot;true&quot;/&gt;
+&lt;/table&gt;
+</code></pre>
+
+<p><strong>补充类似 Oracle 序列的配置方式</strong></p>
+
+<pre><code class="language-xml">&lt;generatedKey column=&quot;id&quot; sqlStatement=&quot;select SEQ_{1}.nextval from dual&quot; identity=&quot;false&quot; type=&quot;pre&quot;/&gt;
+</code></pre>
+
+<p>这里的 {1} 代表的是对应表的大写形式，{0} 是小写形式。</p>
+
+<p>这个配置生成的代码会像下面这样：</p>
+
+<pre><code class="language-java">public class Author {
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY,
+           generator = &quot;select SEQ_AUTHOR.nextval from dual&quot;)
+   private Integer id;
+   // 省略其他
+}
+</code></pre>
+
+<p>这段配置介绍完了，之后运行前面的JAVA方法，就会生成对应的文件。该文件的样式最后贴个例子。</p>
+
+<h3 id="二-使用maven执行mbg">二、使用Maven执行MBG</h3>
+
+<p>这里有一个完整的例子，<a href="https://github.com/abel533/Mybatis-Spring/tree/spring4">Mybatis-Spring</a>，下面讲解的内容出自这个例子。</p>
+
+<p>使用Maven插件的一个好处是可以将Maven中的属性使用<code>${property}</code>形式在<a href="http://git.oschina.net/free/Mapper/blob/master/src/test/resources/generator/generatorConfig.xml"><code>generatorConfig.xml</code></a>中引用。</p>
+
+<p>先看Maven的<a href="https://github.com/abel533/Mybatis-Spring/blob/spring4/pom.xml">pom.xml</a>文件(只显示有关的部分内容):</p>
+
+<pre><code>&lt;properties&gt;
+    &lt;!--  MyBatis Generator  --&gt;
+    &lt;!--  Java接口和实体类  --&gt;
+    &lt;targetJavaProject&gt;${basedir}/src/main/java&lt;/targetJavaProject&gt;
+    &lt;targetMapperPackage&gt;tk.mybatis.mapper.mapper&lt;/targetMapperPackage&gt;
+    &lt;targetModelPackage&gt;tk.mybatis.mapper.model&lt;/targetModelPackage&gt;
+    &lt;!--  XML生成路径  --&gt;
+    &lt;targetResourcesProject&gt;${basedir}/src/main/resources&lt;/targetResourcesProject&gt;
+    &lt;targetXMLPackage&gt;mapper&lt;/targetXMLPackage&gt;
+    &lt;!--  依赖版本  --&gt;
+    &lt;mapper.version&gt;1.0.0&lt;/mapper.version&gt;
+    &lt;mysql.version&gt;5.1.29&lt;/mysql.version&gt;
+&lt;/properties&gt;
+</code></pre>
+
+<p>上面是pom.xml中<code>properties</code>配置的部分内容。这里配置了MBG配置文件中常用到的几个路径以及包名。还包含了通用Mapper的版本和数据库JDBC驱动的版本。</p>
+
+<p>下面是MBG的Maven插件配置：</p>
+
+<pre><code>&lt;plugin&gt;
+    &lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis-generator-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;1.3.2&lt;/version&gt;
+    &lt;configuration&gt;
+        &lt;configurationFile&gt;${basedir}/src/main/resources/generator/generatorConfig.xml&lt;/configurationFile&gt;
+        &lt;overwrite&gt;true&lt;/overwrite&gt;
+        &lt;verbose&gt;true&lt;/verbose&gt;
+    &lt;/configuration&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+        &lt;groupId&gt;mysql&lt;/groupId&gt;
+        &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+        &lt;version&gt;${mysql.version}&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+        &lt;groupId&gt;tk.mybatis&lt;/groupId&gt;
+        &lt;artifactId&gt;mapper&lt;/artifactId&gt;
+        &lt;version&gt;${mapper.version}&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/plugin&gt;
+</code></pre>
+
+<p>这里配置了MBG插件，并且配置了<code>generatorConfig.xml</code>配置文件的路径。另外还有两个依赖，分别是JDBC驱动以及通用Mapper（提供了MBG插件）。</p>
+
+<p>下面我们在看看这个<code>generatorConfig.xml</code>配置文件：</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE generatorConfiguration
+        PUBLIC &quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot;
+        &quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;
+
+&lt;generatorConfiguration&gt;
+    &lt;properties resource=&quot;config.properties&quot;/&gt;
+
+    &lt;context id=&quot;Mysql&quot; targetRuntime=&quot;MyBatis3Simple&quot; defaultModelType=&quot;flat&quot;&gt;
+        &lt;property name=&quot;beginningDelimiter&quot; value=&quot;`&quot;/&gt;
+        &lt;property name=&quot;endingDelimiter&quot; value=&quot;`&quot;/&gt;
+
+        &lt;plugin type=&quot;${mapper.plugin}&quot;&gt;
+          &lt;property name=&quot;mappers&quot; value=&quot;${mapper.Mapper}&quot;/&gt;
+        &lt;/plugin&gt;
+
+        &lt;jdbcConnection driverClass=&quot;${jdbc.driverClass}&quot;
+                        connectionURL=&quot;${jdbc.url}&quot;
+                        userId=&quot;${jdbc.user}&quot;
+                        password=&quot;${jdbc.password}&quot;&gt;
+        &lt;/jdbcConnection&gt;
+
+        &lt;javaModelGenerator targetPackage=&quot;${targetModelPackage}&quot; targetProject=&quot;${targetJavaProject}&quot;/&gt;
+
+        &lt;sqlMapGenerator targetPackage=&quot;${targetXMLPackage}&quot;  targetProject=&quot;${targetResourcesProject}&quot;/&gt;
+
+        &lt;javaClientGenerator targetPackage=&quot;${targetMapperPackage}&quot; targetProject=&quot;${targetJavaProject}&quot; type=&quot;XMLMAPPER&quot; /&gt;
+
+        &lt;table tableName=&quot;%&quot; &gt;
+          &lt;generatedKey column=&quot;id&quot; sqlStatement=&quot;Mysql&quot; identity=&quot;true&quot;/&gt;
+        &lt;/table&gt;
+    &lt;/context&gt;
+&lt;/generatorConfiguration&gt;
+</code></pre>
+
+<p>可以看到这个配置文件中的大多数属性都使用<code>${}</code>形式替代了。使用<code>&lt;properties resource=&quot;config.properties&quot;/&gt;</code>引入了<code>config.properties</code>属性配置，该文件内容如下：</p>
+
+<pre><code># 数据库配置
+jdbc.driverClass = com.mysql.jdbc.Driver
+jdbc.url = jdbc:mysql://localhost:3306/test
+jdbc.user = root
+jdbc.password =
+
+#c3p0
+jdbc.maxPoolSize=50
+jdbc.minPoolSize=10
+jdbc.maxStatements=100
+jdbc.testConnection=true
+
+# 通用Mapper配置
+mapper.plugin = tk.mybatis.mapper.generator.MapperPlugin
+mapper.Mapper = tk.mybatis.mapper.common.Mapper
+</code></pre>
+
+<p>使用配置文件的目的是因为系统多处地方使用了这种配置，因而使用一个属性文件可以方便的保持一致。</p>
+
+<p>除了引用配置文件中的属性外，部分还使用了pom.xml中的属性。这种方式使用起来更灵活。</p>
+
+<p><strong>运行</strong></p>
+
+<p>配置好之后如何运行呢？</p>
+
+<p>在pom.xml这一级目录的命令行窗口执行<code>mvn mybatis-generator:generate</code>即可（前提是配置了mvn）。</p>
+
+<h2 id="生成的代码">生成的代码</h2>
+
+<p>下面是自动生成的代码的例子，这些例子可以在<a href="https://github.com/abel533/Mybatis-Spring/tree/spring4">Mybatis-Spring</a>这里找到。</p>
+
+<h3 id="一-实体类-userinfo-https-github-com-abel533-mybatis-spring-blob-spring4-src-main-java-com-isea533-mybatis-model-userinfo-java">一、实体类<a href="https://github.com/abel533/Mybatis-Spring/blob/spring4/src/main/java/com/isea533/mybatis/model/UserInfo.java"><code>UserInfo</code></a></h3>
+
+<pre><code class="language-java">package tk.mybatis.mapper.model;
+
+import javax.persistence.*;
+
+@Table(name = &quot;user_info&quot;)
+public class UserInfo {
+    @Id
+    @Column(name = &quot;Id&quot;)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    /**
+     * 用户名
+     */
+    private String username;
+
+    /**
+     * 密码
+     */
+    private String password;
+
+    /**
+     * @return Id
+     */
+    public Integer getId() {
+        return id;
+    }
+
+    /**
+     * @param id
+     */
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    /**
+     * 获取用户名
+     *
+     * @return username - 用户名
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * 设置用户名
+     *
+     * @param username 用户名
+     */
+    public void setUsername(String username) {
+        this.username = username;
+    }
+}
+</code></pre>
+
+<p>代码过长，省略了一部分，完整查看：<a href="https://github.com/abel533/Mybatis-Spring/blob/spring4/src/main/java/com/isea533/mybatis/model/UserInfo.java"><code>UserInfo</code></a></p>
+
+<p>可以看到这里生成的注释是有意义的内容，注释来源于数据库表字段的注释。</p>
+
+<p>这里还自动生成了几项注解的内容。</p>
+
+<h3 id="二-mapper接口-userinfomapper-https-github-com-abel533-mybatis-spring-blob-spring4-src-main-java-com-isea533-mybatis-mapper-userinfomapper-java">二、Mapper接口<a href="https://github.com/abel533/Mybatis-Spring/blob/spring4/src/main/java/com/isea533/mybatis/mapper/UserInfoMapper.java"><code>UserInfoMapper</code></a></h3>
+
+<pre><code class="language-java">package tk.mybatis.mapper.mapper;
+
+import tk.mybatis.mapper.common.Mapper;
+import tk.mybatis.mapper.model.UserInfo;
+
+public interface UserInfoMapper extends Mapper&lt;UserInfo&gt; {
+}
+</code></pre>
+
+<p>接口自动继承配置的通用Mapper接口，自动包含泛型实体。</p>
+
+<h3 id="三-mapper-xml文件-userinfomapper-xml-https-github-com-abel533-mybatis-spring-blob-spring4-src-main-resources-mapper-userinfomapper-xml">三、Mapper.xml文件<a href="https://github.com/abel533/Mybatis-Spring/blob/spring4/src/main/resources/mapper/UserInfoMapper.xml"><code>UserInfoMapper.xml</code></a></h3>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot; &gt;
+&lt;mapper namespace=&quot;tk.mybatis.mapper.mapper.UserInfoMapper&quot; &gt;
+    &lt;resultMap id=&quot;BaseResultMap&quot; type=&quot;tk.mybatis.mapper.model.UserInfo&quot; &gt;
+        &lt;!--
+            WARNING - @mbggenerated
+        --&gt;
+        &lt;id column=&quot;Id&quot; property=&quot;id&quot; jdbcType=&quot;INTEGER&quot; /&gt;
+        &lt;result column=&quot;username&quot; property=&quot;username&quot; jdbcType=&quot;VARCHAR&quot; /&gt;
+        &lt;result column=&quot;password&quot; property=&quot;password&quot; jdbcType=&quot;VARCHAR&quot; /&gt;
+        &lt;result column=&quot;usertype&quot; property=&quot;usertype&quot; jdbcType=&quot;VARCHAR&quot; /&gt;
+        &lt;result column=&quot;enabled&quot; property=&quot;enabled&quot; jdbcType=&quot;INTEGER&quot; /&gt;
+        &lt;result column=&quot;realname&quot; property=&quot;realname&quot; jdbcType=&quot;VARCHAR&quot; /&gt;
+        &lt;result column=&quot;qq&quot; property=&quot;qq&quot; jdbcType=&quot;VARCHAR&quot; /&gt;
+        &lt;result column=&quot;email&quot; property=&quot;email&quot; jdbcType=&quot;VARCHAR&quot; /&gt;
+        &lt;result column=&quot;tel&quot; property=&quot;tel&quot; jdbcType=&quot;VARCHAR&quot; /&gt;
+    &lt;/resultMap&gt;
+&lt;/mapper&gt;
+</code></pre>
+
+<p>xml文件只包含了实体的<code>resultMap</code>映射配置。</p>
+
+
+      
+      
+      </div>
+    </div>
+
+    
+
+    <div id="navigation">
+        
+        
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="https://mapperhelper.github.io/js/clipboard.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/perfect-scrollbar.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/jquery.sticky-kit.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/featherlight.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/html5shiv-printshiv.min.js"></script>
+    <script src="https://mapperhelper.github.io/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://mapperhelper.github.io/js/modernizr.custom.71422.js"></script>
+    <script src="https://mapperhelper.github.io/js/learn.js"></script>
+    <script src="https://mapperhelper.github.io/js/hugo-learn.js"></script>
+    
+
+  </body>
+</html>
+
