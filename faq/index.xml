@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mapper3常见问题和用法 on MyBatis 通用 Mapper</title>
+    <title>Mapper 常见问题和用法 on MyBatis 通用 Mapper</title>
     <link>https://mapperhelper.github.io/faq/</link>
-    <description>Recent content in Mapper3常见问题和用法 on MyBatis 通用 Mapper</description>
+    <description>Recent content in Mapper 常见问题和用法 on MyBatis 通用 Mapper</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 04 Jun 2017 15:21:18 +0800</lastBuildDate>
