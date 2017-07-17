@@ -300,6 +300,15 @@ MyBatis 通用 Mapper
 
 <h1 id="更新日志">更新日志</h1>
 
+<h2 id="3-4-1-2017-07-17">3.4.1 - 2017-07-17</h2>
+
+<ul>
+<li><code>Example</code> 增加复杂的 <code>and</code> 和 <code>or</code> 功能。</li>
+<li><code>Example</code> 增加排除查询字段的方法 <code>excludeProperties</code>(<code>selectProperties</code>优先级更高) <a href="http://git.oschina.net/free/Mapper/issues/261">#261</a>.</li>
+<li><code>SqlHelper</code> 中复杂的 <code>if</code> 改为 <code>choose</code> 方式。</li>
+<li>解决通过<code>@Column</code>配置关键字的分隔符时，无法得到该列值的bug。</li>
+</ul>
+
 <h2 id="3-4-0-2017-02-19">3.4.0 - 2017-02-19</h2>
 
 <ul>
